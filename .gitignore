@@ -1,0 +1,9 @@
+.DS_Store
+_site/
+tools/
+# ранние черновики — в публикацию не идут
+v1-old.html
+v2-dark.html
+v2-dark.css
+styles.css
+direction.html

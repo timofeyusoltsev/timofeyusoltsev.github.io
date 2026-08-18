@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru" data-font="inter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оффлайн-режим на мобильном — PREMIER · Тимофей Усольцев</title>
+<meta name="description" content="Собрал сценарий просмотра без сети в мобильном PREMIER: интернет → скачал → оффлайн → просмотр. 30-дневное удержание +16%, отток −10%, вовлечённость +20%, DAU +14%.">
+<script>document.documentElement.classList.add('js')</script>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Оффлайн-режим на мобильном — PREMIER">
+<meta property="og:description" content="Удержание +16%, отток −10%, вовлечённость +20%, DAU мобильных приложений +14%.">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://usoltsev.design/case-premier-offline.html">
+<meta property="og:url" content="https://usoltsev.design/case-premier-offline.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<!-- Figma capture bridge: loaded only when the page is opened with a
+     #figmacapture=... hash, so the third-party script never ships to visitors. -->
+<script>
+if (location.hash.includes('figmacapture')) {
+  const s = document.createElement('script');
+  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+  s.async = true;
+  document.head.appendChild(s);
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__name" href="index.html">Тимофей Усольцев</a>
+    <div class="nav__links">
+      <a href="index.html#cases">Кейсы</a>
+      <a href="index.html#exp">Опыт</a>
+      <a href="index.html#approach">Подход</a>
+    </div>
+    <div class="nav__acts">
+      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Fvr9FbWAeDSE-cmyGMz9QnbasutU759F/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Написать</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="chero wrap rv">
+    <a class="back" href="index.html#cases">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      Все кейсы
+    </a>
+    <span class="case__co"><span class="mark mark--pr" aria-hidden="true"><img src="assets/premier-play.svg" alt=""></span>PREMIER · 20M+ MAU</span>
+    <h1>Оффлайн-режим на мобильном</h1>
+    <p class="chero__lead">Для значительной части аудитории просмотр без сети — не крайний
+    случай, а базовое ожидание. Собрал сценарий целиком: интернет → скачал → оффлайн → просмотр.</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="facts rv">
+      <div><dt>Роль</dt><dd>Product Designer</dd></div>
+      <div><dt>Период</dt><dd>2025</dd></div>
+      <div><dt>Платформы</dt><dd>iOS, Android</dd></div>
+      <div><dt>Результат</dt><dd>+16% удержание</dd></div>
+    </dl>
+
+    <figure class="shot rv">
+      <img src="assets/cases/premier-offline.png" width="1200" height="675"
+           alt="Сценарий оффлайн-просмотра в мобильном приложении PREMIER">
+      <figcaption>Сценарий целиком: интернет → скачал → оффлайн → просмотр</figcaption>
+    </figure>
+  </div>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Аудитория</span>
+      <h2>Кому это нужно и почему это не второстепенная функция</h2>
+      <p class="t2">Сегменты, ради которых делали фичу: пользователи в дороге — транспорт
+      и путешествия; пользователи с нестабильным интернетом; активные мобильные зрители
+      сериалов. Для них оффлайн-режим — не дополнительная опция, а базовое ожидание
+      от видеосервиса.</p>
+      <p class="t2">Это меняло приоритет задачи: речь шла не об удобстве меньшинства,
+      а о работоспособности сервиса в одном из основных режимов использования.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Проблема</span>
+      <h2>Скачивание работало молча</h2>
+      <p class="t2">Скачать эпизод было можно, но состояние процесса оставалось непрозрачным:
+      неясно, идёт ли загрузка или остановилась, хватит ли места на устройстве, что уже
+      доступно без сети, а что нет. Ошибки приходили без объяснения причины.</p>
+      <p class="t2">В результате функцией пользовались реже, чем позволял спрос, — не из-за
+      отсутствия потребности, а из-за отсутствия доверия к результату.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Альтернативы</span>
+      <h2>Индустрия автоматизировала загрузки — нам сначала нужно было их объяснить</h2>
+      <p class="t2">Готовые механики оффлайна в видеосервисах развиты и хорошо описаны.
+      Почти все они надстраиваются над процессом, которому пользователь уже доверяет, —
+      а у нас недоверие и было проблемой.</p>
+    </div>
+
+    <ul class="calls rv">
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>Прозрачный сценарий целиком: состояния, память, поведение без сети</b>
+        <span>В работу пошла предсказуемость существующего механизма, а не новые
+        возможности поверх него.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Автоподкачка следующих эпизодов, как Netflix Smart Downloads</b>
+        <span>Netflix удаляет просмотренный эпизод и заранее подкачивает следующий,
+        работая только по Wi-Fi, чтобы не тратить трафик. Механика умная, но требует
+        доверия к автоматике. Наш пользователь не понимал даже, что происходит с обычной
+        загрузкой: автоматизировать непрозрачный процесс — усилить проблему.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Оффлайн как привилегия старшего тарифа</b>
+        <span>У Netflix Smart Downloads недоступен на рекламном тарифе — монетизация
+        функции существует и работает. Но она предполагает, что базовый сценарий уже
+        надёжен. Продавать доступ к тому, чему не доверяют, преждевременно.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Оставить сроки жизни загрузок в тени</b>
+        <span>Отраслевой стандарт DRM: окно доступности до 30 дней, окно просмотра
+        48 часов с первого запуска, плюс лимит числа загрузок на устройство. Технически
+        это данность, но как продуктовое поведение — источник худшего сценария: скачал
+        и не успел. Значит, сроки нужно показывать таймером, а не обнаруживать по факту.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Список загрузок без работы с памятью устройства</b>
+        <span>У Netflix в загрузках видны размер каждого файла, занятое и свободное место,
+        сортировка и предупреждение при нехватке памяти. Раздел без этих данных остаётся
+        просто списком — он не отвечает на вопрос «что удалить, чтобы поместилось».</span></li>
+    </ul>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Решение</span>
+      <h2>Сценарий целиком, а не кнопка «скачать»</h2>
+    </div>
+
+    <div class="steps stg">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>Прозрачные состояния загрузки</h3>
+        <p>Очередь, прогресс, пауза, ошибка — каждое состояние показано и объяснено,
+        включая причину, по которой загрузка не идёт.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>Управление местом на устройстве</h3>
+        <p>Сколько занимают загрузки, что можно удалить и сколько это освободит — до того,
+        как память закончится, а не после.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>Предсказуемое поведение без сети</h3>
+        <p>Без интернета видно, что доступно к просмотру прямо сейчас, а что требует
+        подключения. Приложение перестало выглядеть сломанным при отсутствии связи.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Результат</span>
+      <h2>Оффлайн-просмотр стал устойчивым сценарием использования</h2>
+    </div>
+    <div class="stats rv">
+      <div><b>+16%</b><span>30-дневное удержание</span></div>
+      <div><b>−10%</b><span>отток</span></div>
+      <div><b>+20%</b><span>вовлечённость по просмотренным эпизодам</span></div>
+      <div><b>+14%</b><span>DAU мобильных приложений</span></div>
+    </div>
+    <div class="cs rv" style="margin-top:var(--head-gap)">
+      <p class="t2">Фича повлияла на связку метрик, а не на одну: выросли и глубина просмотра,
+      и частота возвратов в приложение. Это подтверждает исходную рамку — оффлайн был не
+      удобством, а условием пользования сервисом для заметной части аудитории.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <a class="nextcase rv" href="case-wikkeo-monetization.html">
+      <span class="eyebrow">Следующий кейс</span>
+      <span class="nextcase__ttl">Первая монетизация маркетплейса<span class="nextcase__co"> — WIKKEO</span></span>
+      <span class="case__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <footer class="foot">
+      <span>© 2026 Тимофей Усольцев</span>
+      <span>Сделано руками</span>
+    </footer>
+  </div>
+
+</main>
+
+<script>
+// During a Figma capture nothing is scrolled, so reveal everything up front —
+// otherwise every below-the-fold block would be exported at opacity 0.
+if (location.hash.includes('figmacapture')) {
+  document.querySelectorAll('.rv, .stg').forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
