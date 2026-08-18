@@ -321,6 +321,7 @@ img{display:block}
 /* в макете это не тёмная плашка, а светлая полоса во всю ширину
    с теми же двумя градиентными пятнами, что и в шапке */
 .ctaband{position:relative; overflow:hidden; padding-block:clamp(64px,9vw,144px);
+  border-top:1px solid var(--line);
   display:grid; align-items:center}
 /* на десктопе блок занимает весь экран по высоте */
 @media(min-width:821px){ .ctaband{min-height:100vh} }
