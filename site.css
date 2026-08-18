@@ -84,7 +84,6 @@
 [data-font="onest"]   { --font:'Onest' }
 [data-font="manrope"] { --font:'Manrope' }
 
-
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; background:var(--page)}
 body{
@@ -308,7 +307,6 @@ img{display:block}
 .step p{font-size:14.5px; color:var(--ink-2); line-height:1.6}
 @media(max-width:820px){ .steps{grid-template-columns:1fr; gap:34px} }
 
-
 /* ═══ APPROACH ═══ */
 .duo{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap)}
 .panel{padding:clamp(26px,3.2vw,44px); border:1px solid var(--line); border-radius:var(--r-lg);
@@ -323,8 +321,7 @@ img{display:block}
 .ctaband{position:relative; overflow:hidden; padding-block:clamp(64px,9vw,144px);
   border-top:1px solid var(--line);
   display:grid; align-items:center}
-/* на десктопе блок занимает весь экран по высоте */
-@media(min-width:821px){ .ctaband{min-height:100vh} }
+
 .ctaband::before, .ctaband::after{
   content:''; position:absolute; z-index:0; width:86.8%; aspect-ratio:2/1; pointer-events:none;
 }
