@@ -319,7 +319,7 @@ img{display:block}
 /* геометрия снята с макета: секция 1200×704 внутри полосы 1728×904,
    то есть по 100px сверху и снизу. Пятна привязаны к секции, а не к полосе:
    голубое -300/-319, пурпурное 288/-275 при размере 1500×750. */
-.ctaband{position:relative; overflow:hidden; padding-block:100px;
+.ctaband{position:relative; overflow:hidden; padding-block:50px;
   border-top:1px solid var(--line)}
 .cta{position:relative; min-height:704px;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -342,6 +342,7 @@ img{display:block}
 .cta > *{position:relative; z-index:1}
 .cta h2{font-size:clamp(28px,3.6vw,46px); font-weight:400; letter-spacing:-0.02em;
   line-height:1.298; max-width:512px}
+.cta .btn{font-weight:500}
 @media(max-width:820px){ .cta{min-height:0} }
 
 /* ═══ FOOTER ═══ */
