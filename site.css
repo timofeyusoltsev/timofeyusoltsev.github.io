@@ -396,14 +396,15 @@ img{display:block}
 .cs p{font-size:clamp(15px,1.35vw,17px); line-height:1.65}
 .cs + .steps{margin-top:var(--head-gap)}
 
-.nextcase{display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-  padding:clamp(24px,3vw,38px); border:1px solid var(--line); border-radius:var(--r-lg);
+/* новый блок из макета: подпись и стрелка в одной строке, заголовок под ними */
+.nextcase{display:flex; flex-direction:column; gap:9px;
+  padding:clamp(24px,3vw,36px); border:1px solid var(--line); border-radius:var(--r-lg);
   transition:border-color .3s var(--ease), background-color .3s var(--ease)}
 .nextcase:hover{border-color:var(--line-strong); background:var(--fill)}
-.nextcase .eyebrow{width:100%}
-.nextcase__ttl{font-size:clamp(19px,2vw,26px); font-weight:500; letter-spacing:var(--track)}
+.nextcase__top{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.nextcase__ttl{font-size:clamp(19px,2vw,26px); font-weight:500;
+  letter-spacing:var(--track); line-height:1.55}
 .nextcase__co{color:var(--ink-3)}
-.nextcase .case__go{margin-left:auto}
 .nextcase:hover .case__go{background:var(--dark); border-color:var(--dark); color:#fff}
 
 @media(max-width:940px){
