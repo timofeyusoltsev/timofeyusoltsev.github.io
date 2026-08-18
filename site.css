@@ -316,10 +316,10 @@ img{display:block}
 @media(max-width:720px){ .duo{grid-template-columns:1fr} }
 
 /* ═══ CTA ═══ */
-/* геометрия снята с макета: секция 1200×704 внутри полосы 1728×904,
-   то есть по 100px сверху и снизу. Пятна привязаны к секции, а не к полосе:
+/* геометрия снята с макета: секция 1200×704 внутри полосы 1728×754,
+   то есть по 25px сверху и снизу. Пятна привязаны к секции, а не к полосе:
    голубое -300/-319, пурпурное 288/-275 при размере 1500×750. */
-.ctaband{position:relative; overflow:hidden; padding-block:30px;
+.ctaband{position:relative; overflow:hidden; padding-block:25px;
   border-top:1px solid var(--line)}
 .cta{position:relative; min-height:704px;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
