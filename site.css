@@ -172,7 +172,7 @@ img{display:block}
 /* одно слово рукописным Caveat — 102px против 68px в макете, отсюда 1.5em.
    line-height прижат так, чтобы крупный кегль не раздвигал строку заголовка. */
 .hero h1 .script{font-family:'Caveat',cursive; font-weight:400; font-size:1.5em;
-  line-height:.693; letter-spacing:-1px; color:#000}
+  line-height:0; letter-spacing:-1px; color:#000}
 .hero__side{display:flex; flex-direction:column; gap:22px; padding-bottom:6px}
 .hero__acts{display:flex; flex-wrap:wrap; gap:8px}
 @media(max-width:860px){
