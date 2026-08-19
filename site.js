@@ -67,10 +67,14 @@ const setupCarousel = (root) => {
     track.scrollTo({ left, behavior: 'smooth' });
   };
 
+  // подписи, если они свои у каждого слайда и вынесены под точки
+  const caps = root.parentElement && root.parentElement.querySelector('.fig__caps');
+
   const sync = () => {
     const i = current();
     Array.from(dots.children).forEach((d, n) =>
       d.setAttribute('aria-current', String(n === i)));
+    if (caps) Array.from(caps.children).forEach((c, n) => c.classList.toggle('is-on', n === i));
     prev.disabled = track.scrollLeft <= 1;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
   };

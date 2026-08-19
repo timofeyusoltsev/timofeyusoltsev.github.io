@@ -479,10 +479,14 @@ img{display:block}
 .carousel__dot:hover{background:rgba(0,0,0,.32)}
 .carousel__dot[aria-current="true"]{background:rgba(0,0,0,.55)}
 
-/* слайд с собственной подписью — когда у каждого экрана свой текст */
-.carousel__pane{display:flex; flex-direction:column; align-items:center; gap:16px; width:100%}
+.carousel__pane{display:flex; flex-direction:column; align-items:center; width:100%}
 .carousel__pane img{max-width:100%; height:auto}
-.carousel__cap{font-size:13px; line-height:1.6; color:var(--ink-3); text-align:center}
+/* у каждого слайда своя подпись, но стоит она под точками, как во всех карточках.
+   Грид кладёт подписи друг на друга — высота не скачет при переключении. */
+.fig__caps{display:grid; width:100%}
+.fig__caps > span{grid-area:1/1; font-size:13px; line-height:1.6; color:var(--ink-3);
+  text-align:center; opacity:0; transition:opacity .25s var(--ease)}
+.fig__caps > span.is-on{opacity:1}
 @media(max-width:820px){
   .carousel__nav--prev{left:-6px}
   .carousel__nav--next{right:-6px}
