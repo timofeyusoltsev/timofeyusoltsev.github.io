@@ -124,7 +124,7 @@ document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
    Любой визуал открывается по тапу. Если он часть ленты, в просмотре
    листаются все ее экраны — теми же стрелками и точками, что в карточке. */
 const lightbox = (() => {
-  let box, figure, img, caption, closeBtn, prev, next, dots;
+  let box, figure, img, closeBtn, prev, next, dots;
   let group = [], index = 0, opener = null;
 
   const build = () => {
@@ -145,9 +145,8 @@ const lightbox = (() => {
     figure.className = 'lb__fig';
     img = document.createElement('img');
     img.className = 'lb__img';
-    caption = document.createElement('figcaption');
-    caption.className = 'lb__cap';
-    figure.append(img, caption);
+    // подпись остаётся на странице: в просмотре нужен только сам макет
+    figure.append(img);
 
     prev = document.createElement('button');
     prev.type = 'button';
@@ -189,8 +188,6 @@ const lightbox = (() => {
     const src = group[index];
     img.src = src.currentSrc || src.src;
     img.alt = src.alt || '';
-    caption.textContent = src.alt || '';
-    caption.hidden = !src.alt;
     prev.hidden = next.hidden = group.length < 2;
     prev.disabled = index === 0;
     next.disabled = index === group.length - 1;

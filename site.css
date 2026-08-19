@@ -561,12 +561,9 @@ img{display:block}
 
 .lb__fig{display:flex; flex-direction:column; align-items:center; gap:16px;
   min-height:0; max-width:100%}
-.lb__img{max-width:min(1400px,100%); max-height:calc(100dvh - 190px);
+.lb__img{max-width:min(1400px,100%); max-height:calc(100dvh - 140px);
   width:auto; height:auto; object-fit:contain; border-radius:12px;
   box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
-.lb__cap{max-width:60ch; font-size:14px; line-height:1.55; text-align:center;
-  color:var(--ink-on-dark-2)}
-
 .lb__close{position:absolute; top:16px; right:16px; width:44px; height:44px; padding:0;
   border-radius:var(--r-pill); border:1px solid rgba(255,255,255,.18);
   background:rgba(255,255,255,.08); color:var(--ink-on-dark);
@@ -601,7 +598,7 @@ img{display:block}
 
 @media(max-width:700px){
   .lb{padding:60px 12px 20px}
-  .lb__img{max-height:calc(100dvh - 176px)}
+  .lb__img{max-height:calc(100dvh - 130px)}
   .lb__nav{width:40px; height:40px}
   .lb__nav--prev{left:8px}
   .lb__nav--next{right:8px}
