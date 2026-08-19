@@ -508,11 +508,13 @@ img{display:block}
 .carousel--phones{--slide-h:clamp(430px,46vw,620px)}
 .carousel--wide{--slide-h:clamp(200px,25vw,450px)}
 .carousel__slide{height:var(--slide-h,450px); width:auto; max-width:none;
-  cursor:zoom-in; user-select:none; -webkit-user-drag:none}
+  user-select:none; -webkit-user-drag:none}
 /* Никаких обводок и теней поверх макетов: они выгружены из фигмы со своими
-   краями, а лишний кант читался как рамка и раздувал сам макет. */
+   краями, а лишний кант читался как рамка и раздувал сам макет.
+   Скруглить нужно только скриншоты браузера и плеера — у них край прямой. */
+.carousel--wide .carousel__slide{border-radius:12px}
 /* одиночный визуал: листать нечего, вписываем по ширине карточки */
-.fig__img{max-width:100%; height:auto; cursor:zoom-in}
+.fig__img{max-width:100%; height:auto}
 
 /* стрелки по бокам карточки, по вертикали — по центру ленты */
 .carousel__nav{position:absolute; top:50%; z-index:2;
@@ -551,61 +553,6 @@ img{display:block}
 }
 @media(max-width:820px){
   .fig{margin-inline:0; padding:clamp(16px,4vw,28px)}
-}
-
-/* ═══ ПРОСМОТР ВО ВЕСЬ ЭКРАН ═══
-   Любой визуал открывается по тапу. Затемнение мягкое, а не чёрное — экраны
-   продуктов светлые, и на чистом чёрном они выглядят вырезанными. */
-.lb{position:fixed; inset:0; z-index:100; display:grid; grid-template-rows:1fr auto;
-  align-items:center; justify-items:center; gap:18px; padding:64px 20px 24px;
-  background:rgba(17,17,17,.86); backdrop-filter:blur(10px);
-  animation:lb-in .22s var(--ease-out)}
-.lb[hidden]{display:none}
-@keyframes lb-in{from{opacity:0} to{opacity:1}}
-
-.lb__fig{display:flex; flex-direction:column; align-items:center; gap:16px;
-  min-height:0; max-width:100%}
-.lb__img{max-width:min(1400px,100%); max-height:calc(100dvh - 140px);
-  width:auto; height:auto; object-fit:contain; border-radius:12px;
-  box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
-.lb__close{position:absolute; top:16px; right:16px; width:44px; height:44px; padding:0;
-  border-radius:var(--r-pill); border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.08); color:var(--ink-on-dark);
-  display:grid; place-items:center; cursor:pointer;
-  transition:background-color .2s var(--ease-out), border-color .2s var(--ease-out),
-    transform .2s var(--ease-out)}
-.lb__close:hover{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.32);
-  transform:scale(1.06)}
-.lb__close svg{width:18px; height:18px}
-
-/* стрелки те же, что в карточке, только на тёмном */
-.lb__nav{position:absolute; top:50%; transform:translateY(-50%) scale(1);
-  width:44px; height:44px; padding:0; border-radius:var(--r-pill);
-  border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08);
-  color:var(--ink-on-dark); display:grid; place-items:center; cursor:pointer;
-  transition:opacity .2s var(--ease), background-color .2s var(--ease-out),
-    border-color .2s var(--ease-out), transform .2s var(--ease-out)}
-.lb__nav:hover{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.32);
-  transform:translateY(-50%) scale(1.1)}
-.lb__nav:active{transform:translateY(-50%) scale(.96)}
-.lb__nav svg{width:18px; height:18px}
-.lb__nav--prev{left:16px}
-.lb__nav--next{right:16px}
-.lb__nav[disabled]{opacity:0; pointer-events:none}
-.lb__nav[hidden]{display:none}
-
-.lb__dots{display:flex; justify-content:center; gap:7px}
-.lb__dots[hidden]{display:none}
-.lb__dots .carousel__dot{background:rgba(255,255,255,.3)}
-.lb__dots .carousel__dot:hover{background:rgba(255,255,255,.55)}
-.lb__dots .carousel__dot[aria-current="true"]{background:#fff}
-
-@media(max-width:700px){
-  .lb{padding:60px 12px 20px}
-  .lb__img{max-height:calc(100dvh - 130px)}
-  .lb__nav{width:40px; height:40px}
-  .lb__nav--prev{left:8px}
-  .lb__nav--next{right:8px}
 }
 
 /* ═══ CASE PAGE — decisions taken and dropped ═══ */

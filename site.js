@@ -1,4 +1,4 @@
-/* Общий скрипт сайта: появление блоков, карусели экранов и просмотр во весь экран. */
+/* Общий скрипт сайта: появление блоков и карусели экранов. */
 
 /* ── появление блоков ───────────────────────────────────────────────── */
 // при захвате макета в фигму ничего не прокручивается, поэтому показываем все сразу
@@ -19,7 +19,6 @@ const icon = (d) =>
 
 const ARROW_LEFT  = 'M15 5l-7 7 7 7';
 const ARROW_RIGHT = 'M9 5l7 7-7 7';
-const CROSS       = 'M6 6l12 12M18 6L6 18';
 
 /* ── карусель экранов ───────────────────────────────────────────────── */
 // Разметка задает только дорожку со слайдами; стрелки и точки строятся здесь,
@@ -109,7 +108,7 @@ const setupCarousel = (root) => {
   track.addEventListener('pointerup', release);
   track.addEventListener('pointercancel', release);
   track.addEventListener('lostpointercapture', release);
-  // протяжка не должна засчитаться как тап по экрану и открыть просмотр
+  // протяжка не должна засчитаться как клик по ссылке внутри слайда
   track.addEventListener('click', (e) => {
     if (moved > 6) { e.preventDefault(); e.stopPropagation(); }
   }, true);
@@ -119,122 +118,3 @@ const setupCarousel = (root) => {
 };
 
 document.querySelectorAll('[data-carousel]').forEach(setupCarousel);
-
-/* ── просмотр во весь экран ─────────────────────────────────────────────
-   Любой визуал открывается по тапу. Если он часть ленты, в просмотре
-   листаются все ее экраны — теми же стрелками и точками, что в карточке. */
-const lightbox = (() => {
-  let box, figure, img, closeBtn, prev, next, dots;
-  let group = [], index = 0, opener = null;
-
-  const build = () => {
-    box = document.createElement('div');
-    box.className = 'lb';
-    box.hidden = true;
-    box.setAttribute('role', 'dialog');
-    box.setAttribute('aria-modal', 'true');
-    box.setAttribute('aria-label', 'Просмотр визуала');
-
-    closeBtn = document.createElement('button');
-    closeBtn.type = 'button';
-    closeBtn.className = 'lb__close';
-    closeBtn.setAttribute('aria-label', 'Закрыть');
-    closeBtn.innerHTML = icon(CROSS);
-
-    figure = document.createElement('figure');
-    figure.className = 'lb__fig';
-    img = document.createElement('img');
-    img.className = 'lb__img';
-    // подпись остаётся на странице: в просмотре нужен только сам макет
-    figure.append(img);
-
-    prev = document.createElement('button');
-    prev.type = 'button';
-    prev.className = 'lb__nav lb__nav--prev';
-    prev.setAttribute('aria-label', 'Предыдущий экран');
-    prev.innerHTML = icon(ARROW_LEFT);
-
-    next = document.createElement('button');
-    next.type = 'button';
-    next.className = 'lb__nav lb__nav--next';
-    next.setAttribute('aria-label', 'Следующий экран');
-    next.innerHTML = icon(ARROW_RIGHT);
-
-    dots = document.createElement('div');
-    dots.className = 'lb__dots';
-
-    box.append(closeBtn, prev, figure, next, dots);
-    document.body.append(box);
-
-    closeBtn.addEventListener('click', close);
-    prev.addEventListener('click', () => show(index - 1));
-    next.addEventListener('click', () => show(index + 1));
-    // клик мимо картинки закрывает — привычное поведение просмотрщика
-    box.addEventListener('click', (e) => { if (e.target === box || e.target === figure) close(); });
-
-    // свайп пальцем между экранами
-    let x0 = null;
-    box.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
-    box.addEventListener('touchend', (e) => {
-      if (x0 === null) return;
-      const dx = e.changedTouches[0].clientX - x0;
-      if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
-      x0 = null;
-    });
-  };
-
-  const show = (i) => {
-    index = Math.max(0, Math.min(group.length - 1, i));
-    const src = group[index];
-    img.src = src.currentSrc || src.src;
-    img.alt = src.alt || '';
-    prev.hidden = next.hidden = group.length < 2;
-    prev.disabled = index === 0;
-    next.disabled = index === group.length - 1;
-    dots.hidden = group.length < 2;
-    dots.replaceChildren(...group.map((_, n) => {
-      const d = document.createElement('button');
-      d.type = 'button';
-      d.className = 'carousel__dot';
-      d.setAttribute('aria-label', `Экран ${n + 1} из ${group.length}`);
-      d.setAttribute('aria-current', String(n === index));
-      d.addEventListener('click', () => show(n));
-      return d;
-    }));
-  };
-
-  const onKey = (e) => {
-    if (e.key === 'Escape') close();
-    else if (e.key === 'ArrowLeft') show(index - 1);
-    else if (e.key === 'ArrowRight') show(index + 1);
-  };
-
-  function close() {
-    box.hidden = true;
-    document.documentElement.style.overflow = '';
-    document.removeEventListener('keydown', onKey);
-    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
-  }
-
-  const open = (target) => {
-    if (!box) build();
-    const carousel = target.closest('.carousel');
-    group = carousel
-      ? Array.from(carousel.querySelectorAll('.carousel__slide'))
-      : [target];
-    opener = target;
-    show(Math.max(0, group.indexOf(target)));
-    box.hidden = false;
-    // фон не должен прокручиваться под просмотром
-    document.documentElement.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-    closeBtn.focus({ preventScroll: true });
-  };
-
-  return { open };
-})();
-
-document.addEventListener('click', (e) => {
-  const target = e.target.closest('.fig img');
-  if (target) { e.preventDefault(); lightbox.open(target); }
-});
