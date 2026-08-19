@@ -19,34 +19,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=32fe0efe">
-<!-- Figma capture bridge: loaded only when the page is opened with a
-     #figmacapture=... hash, so the third-party script never ships to visitors. -->
-<script>
-if (location.hash.includes('figmacapture')) {
-  const s = document.createElement('script');
-  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
-  s.async = true;
-  document.head.appendChild(s);
-}
-</script>
+<link rel="stylesheet" href="site.css?v=6f29571d">
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav__in">
-    <a class="nav__name" href="index.html">Тимофей Усольцев</a>
-    <div class="nav__links">
-      <a href="index.html#cases">Кейсы</a>
-      <a href="index.html#exp">Опыт</a>
-      <a href="index.html#approach">Подход</a>
-    </div>
-    <div class="nav__acts">
-      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Fvr9FbWAeDSE-cmyGMz9QnbasutU759F/view?usp=sharing" target="_blank" rel="noopener">CV</a>
-      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Написать</a>
-    </div>
-  </div>
-</nav>
 
 <main id="top">
 
@@ -56,36 +31,34 @@ if (location.hash.includes('figmacapture')) {
       Все кейсы
     </a>
     <span class="case__co"><img class="mark mark--img" src="assets/logo-wikkeo.png" alt="" aria-hidden="true">WIKKEO · 3M+ MAU</span>
-    <h1>Механика торгов: больше сделок, активнее чаты</h1>
+    <h1>Механика торгов: больше сделок —активнее чаты</h1>
     <p class="chero__lead">Торговаться на площадке было можно, но покупатели об этом не знали.
-    Встроил торг в сценарий заказа — как явное действие, а не как догадку.</p>
+    Встроил торг в сценарий заказа — как явное действие,<br>а не как догадку.</p>
   </header>
 
   <div class="wrap">
     <dl class="facts rv">
       <div><dt>Роль</dt><dd>Lead Designer</dd></div>
       <div><dt>Период</dt><dd>2025 — 2026</dd></div>
-      <div><dt>Формат</dt><dd>Фриланс</dd></div>
+      <div><dt>Платформы</dt><dd>Web, Mobile</dd></div>
       <div><dt>Результат</dt><dd>7 000 продаж за месяц</dd></div>
     </dl>
 
-    <figure class="shots shots--phones rv">
-      <img src="assets/cases/wikkeo-bargain-buyer.png" width="971" height="2011"
-           alt="Экран заказа WIKKEO с новой ценой после торга">
-      <img src="assets/cases/wikkeo-bargain-seller.png" width="392" height="812"
-           alt="Экран продавца: скидка на заказ в кабинете">
+    <figure class="fig rv">
+      <img src="assets/case/bar-hero-row.webp" width="472" height="454"
+           alt="Экран заказа WIKKEO с новой ценой после торга и экран продавца со скидкой на заказ">
       <figcaption>Слева — заказ покупателя с новой ценой, справа — управление скидкой у продавца</figcaption>
     </figure>
   </div>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Исследование</span>
-      <h2>Спрос на торг был, но о нём не догадывались</h2>
+      <h2>Спрос на торг был,<br>но о нем не догадывались</h2>
       <p class="t2">Опросил покупателей и продавцов через сетку комьюнити-групп площадки.
-      <b>18 из 24 покупателей</b> ответили, что никогда не думали, что здесь можно торговаться,
+      18 из 24 покупателей ответили, что никогда не думали, что здесь можно торговаться,
       но готовы попробовать. Чтобы проверить не декларацию, а поведение, попросил их написать
-      нескольким продавцам и попросить скидку: <b>из 10 попытавшихся договорились 7</b>,
+      нескольким продавцам и попросить скидку:<br>из 10 попытавшихся договорились 7,
       и опыт им понравился.</p>
       <p class="t2">Продавцы встретили идею настороженно. Отношение изменилось после того,
       как стало ясно: процент скидки они определяют сами, а механика работает на объём продаж,
@@ -93,10 +66,10 @@ if (location.hash.includes('figmacapture')) {
     </div>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Конкурентный анализ</span>
-      <h2>У всех торг живёт в переписке — и там же теряется</h2>
+      <h2>У всех торг живет в переписке — и там же теряется</h2>
       <p class="t2">На Авито прямой контакт с продавцом есть, и самые настойчивые покупатели
       о скидке договариваются, но механики как таковой нет: торг существует только внутри
       чата и держится на том, догадался покупатель написать или нет.</p>
@@ -110,7 +83,7 @@ if (location.hash.includes('figmacapture')) {
     </div>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Приоритизация</span>
       <h2>Подсказок в чате было бы недостаточно</h2>
@@ -140,7 +113,7 @@ if (location.hash.includes('figmacapture')) {
     </ul>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Решение</span>
       <h2>Торг встроен в заказ, а не в переписку</h2>
@@ -166,9 +139,22 @@ if (location.hash.includes('figmacapture')) {
         по позициям. Это заранее решало проблему частичных возвратов.</p>
       </div>
     </div>
+
+    <div class="figrow rv">
+      <figure class="fig">
+        <img src="assets/case/bar-buyer-row.webp" width="910" height="361"
+             alt="Экраны покупателя: карточка товара с онбордингом торга, товар с бейджем «Возможен торг», заказ со скидкой">
+        <figcaption>Сценарий покупателя: оформляет товар, пишет продавцу, продавец дает скидку</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/case/bar-seller-row.webp" width="910" height="356"
+             alt="Экраны продавца: настройка «Возможен торг», детали заказа, новая стоимость заказа и итог после торга">
+        <figcaption>Сценарий продавца: выставляет в ЛК возможность торговаться с ним</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Результат</span>
       <h2>Торг стал массовым сценарием за первый месяц</h2>
@@ -206,16 +192,10 @@ if (location.hash.includes('figmacapture')) {
 </main>
 
 <script>
-// During a Figma capture nothing is scrolled, so reveal everything up front —
-// otherwise every below-the-fold block would be exported at opacity 0.
-if (location.hash.includes('figmacapture')) {
-  document.querySelectorAll('.rv, .stg').forEach(el => el.classList.add('in'));
-} else {
-  const io = new IntersectionObserver((es) => {
-    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
-}
+const io = new IntersectionObserver((es) => {
+  es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

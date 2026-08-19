@@ -19,34 +19,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=32fe0efe">
-<!-- Figma capture bridge: loaded only when the page is opened with a
-     #figmacapture=... hash, so the third-party script never ships to visitors. -->
-<script>
-if (location.hash.includes('figmacapture')) {
-  const s = document.createElement('script');
-  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
-  s.async = true;
-  document.head.appendChild(s);
-}
-</script>
+<link rel="stylesheet" href="site.css?v=6f29571d">
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav__in">
-    <a class="nav__name" href="index.html">Тимофей Усольцев</a>
-    <div class="nav__links">
-      <a href="index.html#cases">Кейсы</a>
-      <a href="index.html#exp">Опыт</a>
-      <a href="index.html#approach">Подход</a>
-    </div>
-    <div class="nav__acts">
-      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Fvr9FbWAeDSE-cmyGMz9QnbasutU759F/view?usp=sharing" target="_blank" rel="noopener">CV</a>
-      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Написать</a>
-    </div>
-  </div>
-</nav>
 
 <main id="top">
 
@@ -69,14 +44,14 @@ if (location.hash.includes('figmacapture')) {
       <div><dt>Результат</dt><dd>80% расходов покрыто</dd></div>
     </dl>
 
-    <figure class="shot rv">
-      <img src="assets/cases/wikkeo-promo.png" width="808" height="458"
-           alt="Кабинет продавца WIKKEO: раздел продвижения с рекламным балансом и рассылкой по чатам">
+    <figure class="fig rv">
+      <img src="assets/case/mon-hero-row.webp" width="988" height="524"
+           alt="Кабинет продавца WIKKEO: раздел «Продвижение» с балансом рекламного кошелька">
       <figcaption>Раздел «Продвижение» в кабинете продавца</figcaption>
     </figure>
   </div>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Контекст</span>
       <h2>Трафик был, выручка с него не шла</h2>
@@ -87,7 +62,7 @@ if (location.hash.includes('figmacapture')) {
     </div>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Приоритизация</span>
       <h2>Из большинста вариантов монетизации в работу пошли 2</h2>
@@ -109,19 +84,19 @@ if (location.hash.includes('figmacapture')) {
         <span>Долго и дорого в разработке при неочевидном горизонте окупаемости.</span></li>
       <li><span class="mk" aria-hidden="true">—</span>
         <b>Подписочная модель</b>
-        <span>Сложно, долго, дорого. На тот момент площадке нечего было положить
-        в бенефиты подписки — продавать доступ было не к чему.</span></li>
+        <span>На тот момент площадке нечего было положить в бенефиты подписки — продавать доступ
+        было не к чему.</span></li>
       <li><span class="mk" aria-hidden="true">—</span>
         <b>Кастомизация карточек</b>
-        <span>Ценность и эффект непонятны, разработка дорогая, а интерфейс легко
-        перегрузить украшательством.</span></li>
+        <span>Ценность и эффект непонятны, разработка дорогая, а интерфейс легко перегрузить
+        украшательством.</span></li>
       <li><span class="mk" aria-hidden="true">—</span>
         <b>Расширенная кастомизация описаний товара</b>
         <span>Эффект непонятен.</span></li>
       <li><span class="mk" aria-hidden="true">—</span>
         <b>Дополнительные инструменты для описания товара</b>
-        <span>Механика неочевидна продавцу и относится скорее к системе надёжности
-        продавца, чем к продвижению.</span></li>
+        <span>Механика неочевидна продавцу и относится скорее к системе надёжности продавца,
+        чем к продвижению.</span></li>
       <li><span class="mk" aria-hidden="true">—</span>
         <b>Пуш-уведомления</b>
         <span>Отложены до релиза мобильного приложения.</span></li>
@@ -132,7 +107,7 @@ if (location.hash.includes('figmacapture')) {
     </ul>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Решение</span>
       <h2>Продавец видит, что покупает —до оплаты</h2>
@@ -145,29 +120,29 @@ if (location.hash.includes('figmacapture')) {
       <div class="step">
         <span class="step__n">01</span>
         <h3>Рекламный баланс</h3>
-        <p>Продавец пополняет внутренний счёт через модерацию и дальше расходует его
-        на любой инструмент продвижения. Оплата отделена от использования — платёжный
-        барьер проходится один раз, а не перед каждым действием.</p>
+        <p>Продавец пополняет внутренний счёт через модерацию и дальше расходует его на любой
+        инструмент продвижения. Оплата отделена от использования — платёжный барьер проходится
+        один раз, а не перед каждым действием.</p>
       </div>
       <div class="step">
         <span class="step__n">02</span>
         <h3>Вывод в подборку топ-продавцов</h3>
-        <p>Продавец покупает место в подборке и получает дополнительный трафик на свои
-        товары. Первый платный инструмент выбран именно за это: эффект понятен обеим
-        сторонам без объяснений.</p>
+        <p>Продавец покупает место в подборке и получает дополнительный трафик на свои товары.
+        Первый платный инструмент выбран именно за это: эффект понятен обеим сторонам
+        без объяснений.</p>
       </div>
       <div class="step">
         <span class="step__n">03</span>
         <h3>Адресная рассылка по сегментам</h3>
-        <p>Рассылка адресуется не всем подряд, а тем, кто уже проявил интерес: смотрел
-        товар, заказывал, добавил в избранное или в корзину. Продавец выбирает готовый
-        оффер и видит охват и итоговую стоимость до подтверждения.</p>
+        <p>Рассылка адресуется не всем подряд, а тем, кто уже проявил интерес: смотрел товар,
+        заказывал, добавил в избранное или в корзину. Продавец выбирает готовый оффер и видит
+        охват и итоговую стоимость до подтверждения.</p>
       </div>
     </div>
 
-    <figure class="shot rv">
-      <img src="assets/wikkeo-promo-flow.webp" width="982" height="429"
-           alt="Экраны кабинета продавца: пополнение баланса, создание рассылки, выбор товара и расчёт стоимости">
+    <figure class="fig rv">
+      <img src="assets/case/mon-flow-row.webp" width="982" height="429"
+           alt="Экраны кабинета продавца: пустое состояние рассылки, создание рассылки, выбор товара и расчёт стоимости">
       <figcaption>Сценарий продавца: пополнение баланса, выбор сегмента и расчёт стоимости</figcaption>
     </figure>
 
@@ -178,16 +153,14 @@ if (location.hash.includes('figmacapture')) {
       и так переписываются. Это и позволило запустить монетизацию мягко.</p>
     </div>
 
-    <figure class="shots shots--pair rv">
-      <img src="assets/cases/wikkeo-promo-chat.png" width="390" height="860"
-           alt="Сообщение с предложением от продавца в чате покупателя">
-      <img src="assets/wikkeo-cabinet.webp" width="728" height="540"
-           alt="Кабинет продавца WIKKEO с открытым чатом">
+    <figure class="fig rv">
+      <img src="assets/case/mon-chat-row.webp" width="850" height="505"
+           alt="Предложение от продавца в чате покупателя и тот же чат в кабинете продавца">
       <figcaption>Предложение приходит в чат с продавцом</figcaption>
     </figure>
   </section>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Результат</span>
       <h2>Площадка начала зарабатывать,<br>не принуждая продавцов</h2>
@@ -222,16 +195,10 @@ if (location.hash.includes('figmacapture')) {
 </main>
 
 <script>
-// During a Figma capture nothing is scrolled, so reveal everything up front —
-// otherwise every below-the-fold block would be exported at opacity 0.
-if (location.hash.includes('figmacapture')) {
-  document.querySelectorAll('.rv, .stg').forEach(el => el.classList.add('in'));
-} else {
-  const io = new IntersectionObserver((es) => {
-    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
-}
+const io = new IntersectionObserver((es) => {
+  es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { rootMargin: '0px 0px -6% 0px' });
+document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

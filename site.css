@@ -255,10 +255,16 @@ img{display:block}
 .showcase figcaption{margin-top:16px; font-size:13px; color:var(--ink-3); text-align:center}
 
 /* ═══ FEATURE — case block with visual ═══ */
-.feature{display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(30px,4.4vw,72px);
+.feature{position:relative; display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(30px,4.4vw,72px);
   align-items:center; padding:clamp(28px,4vw,60px);
   border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill);
-  margin-bottom:var(--gap)}
+  margin-bottom:var(--gap); cursor:pointer;
+  transition:border-color .3s var(--ease)}
+/* вся карточка кликабельна: ссылку кнопки растягиваем на весь блок,
+   чтобы не вкладывать <a> в <a> и оставить один таб-стоп */
+.feature .btn::after{content:''; position:absolute; inset:0; z-index:1; border-radius:inherit}
+.feature:hover{border-color:var(--line-strong)}
+.feature:hover .btn{border-color:var(--line-strong); background:var(--page)}
 .feature__body{display:flex; flex-direction:column; gap:20px}
 .feature__ttl{font-size:clamp(21px,2.2vw,30px); font-weight:500; letter-spacing:var(--track); line-height:1.24}
 .feature__stats{display:flex; flex-wrap:wrap; gap:28px; padding-top:20px; border-top:1px solid var(--line)}
@@ -414,28 +420,31 @@ img{display:block}
   .facts{grid-template-columns:repeat(2,1fr); gap:24px var(--gap)}
 }
 
-/* ═══ CASE PAGE — media rows ═══ */
-/* several screens side by side; phone shots stay narrow, wide shots fill the row */
-.shots{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-  gap:clamp(16px,2vw,32px); align-items:start;
-  margin-top:clamp(34px,4.5vw,56px); padding:clamp(18px,2.6vw,40px);
-  border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill)}
-.shots img{width:100%; height:auto; border-radius:var(--r-md); border:1px solid var(--line)}
-.shots figcaption{grid-column:1/-1; margin-top:2px; font-size:13px; color:var(--ink-3); text-align:center}
-.shots--phones{grid-template-columns:repeat(auto-fit,minmax(150px,220px)); justify-content:center}
-/* пара «телефон + десктоп»: в макете 187px и 554px с зазором 36px */
-.shots--pair{display:flex; align-items:flex-end; justify-content:center; gap:36px; flex-wrap:wrap}
-.shots--pair img{width:auto; max-width:100%}
-.shots--pair img:first-of-type{width:24%; min-width:150px}
-.shots--pair img:nth-of-type(2){width:71%; min-width:280px}
+/* ═══ CASE PAGE — figures ═══ */
+/* карточка из макета: 992 внутри колонки 1072 (отсюда поля по 40),
+   фон #FAFAFA, радиус 16, внутренние поля 40, колонка контента 910.
+   Экраны выгружены из фигмы в своём размере и стоят по центру карточки. */
+.fig{margin-top:clamp(34px,4.5vw,56px); margin-inline:40px;
+  padding:40px; border-radius:16px; background:#FAFAFA;
+  display:flex; flex-direction:column; align-items:center; gap:16px}
+.fig img{display:block; max-width:100%; height:auto}
+.fig figcaption{font-size:13px; line-height:1.6; color:var(--ink-3); text-align:center}
+/* пара карточек в ряд — в макете они уезжают за край колонки */
+.figrow{display:flex; gap:24px; margin-top:clamp(34px,4.5vw,56px); margin-inline:40px;
+  overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory}
+.figrow .fig{margin:0; flex:0 0 auto; width:min(912px,86vw); scroll-snap-align:start}
+@media(max-width:820px){
+  .fig{margin-inline:0; padding:clamp(16px,4vw,28px)}
+  .figrow{margin-inline:0}
+}
 
 /* ═══ CASE PAGE — decisions taken and dropped ═══ */
 /* showing what was cut, and why, is what makes the reasoning visible */
 .calls{display:flex; flex-direction:column; gap:18px; max-width:70ch; margin-top:var(--head-gap)}
-.calls > li{display:grid; grid-template-columns:22px 1fr; gap:3px 12px; align-items:start}
-.calls .mk{grid-row:span 2; width:22px; height:22px; margin-top:1px; border-radius:6px;
-  display:grid; place-items:center; font-size:13px; line-height:1;
-  border:0; background:#E9E9EC; color:transparent}
-.calls .mk--yes{background:#223BDD; color:#fff}
+.calls > li{display:grid; grid-template-columns:16px 1fr; gap:3px 10px; align-items:start}
+.calls .mk{grid-row:span 2; width:16px; height:16px; margin-top:3px; border-radius:5px;
+  display:grid; place-items:center; font-size:10px; line-height:1;
+  border:0; background:#E5E5E5; color:transparent}
+.calls .mk--yes{background:#0088FF; color:#fff}
 .calls b{font-weight:500; font-size:15.5px; letter-spacing:-0.01em}
 .calls span{font-size:14.5px; color:var(--ink-2); line-height:1.55}
