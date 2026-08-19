@@ -27,7 +27,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=1ed3801b">
+<link rel="stylesheet" href="site.css?v=7561fd0d">
 <!-- Мост захвата в Figma: грузится только при открытии страницы
      с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
 <script>
@@ -74,13 +74,17 @@ if (location.hash.includes('figmacapture')) {
     </dl>
 
     <figure class="fig rv">
-      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+      <div class="carousel carousel--phones" data-carousel>
         <div class="carousel__viewport">
           <div class="carousel__track">
-            <img class="carousel__slide" src="assets/case/bar-hero-1.webp" width="220" height="453"
-                 alt="Заказ покупателя с новой ценой после торга">
-            <img class="carousel__slide" src="assets/case/bar-hero-2.webp" width="220" height="453"
-                 alt="Управление скидкой на заказ в кабинете продавца">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-hero-1.webp" width="228" height="470"
+                   alt="Заказ покупателя с новой ценой после торга">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-hero-2.webp" width="228" height="470"
+                   alt="Управление скидкой на заказ в кабинете продавца">
+            </div>
           </div>
         </div>
       </div>
@@ -178,15 +182,21 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+      <div class="carousel carousel--phones" data-carousel>
         <div class="carousel__viewport">
           <div class="carousel__track">
-            <img class="carousel__slide" src="assets/case/bar-buyer-1.webp" width="174" height="360"
-                 alt="Карточка товара с онбордингом торга">
-            <img class="carousel__slide" src="assets/case/bar-buyer-2.webp" width="175" height="360"
-                 alt="Товар с бейджем «Возможен торг»">
-            <img class="carousel__slide" src="assets/case/bar-buyer-3.webp" width="174" height="360"
-                 alt="Заказ покупателя с новой ценой после торга">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-buyer-1.webp" width="227" height="470"
+                   alt="Карточка товара с онбордингом торга">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-buyer-2.webp" width="228" height="470"
+                   alt="Товар с бейджем «Возможен торг»">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-buyer-3.webp" width="227" height="470"
+                   alt="Заказ покупателя с новой ценой после торга">
+            </div>
           </div>
         </div>
       </div>
@@ -194,17 +204,25 @@ if (location.hash.includes('figmacapture')) {
     </figure>
 
     <figure class="fig rv">
-      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+      <div class="carousel carousel--phones" data-carousel>
         <div class="carousel__viewport">
           <div class="carousel__track">
-            <img class="carousel__slide" src="assets/case/bar-seller-1.webp" width="161" height="346"
-                 alt="Настройка «Возможен торг» в кабинете продавца">
-            <img class="carousel__slide" src="assets/case/bar-seller-2.webp" width="161" height="346"
-                 alt="Детали заказа со скидкой за торг">
-            <img class="carousel__slide" src="assets/case/bar-seller-3.webp" width="171" height="346"
-                 alt="Новая стоимость заказа">
-            <img class="carousel__slide" src="assets/case/bar-seller-4.webp" width="156" height="346"
-                 alt="Итог заказа после торга">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-seller-1.webp" width="223" height="470"
+                   alt="Настройка «Возможен торг» в кабинете продавца">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-seller-2.webp" width="220" height="470"
+                   alt="Детали заказа со скидкой за торг">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-seller-3.webp" width="226" height="470"
+                   alt="Новая стоимость заказа">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/bar-seller-4.webp" width="216" height="470"
+                   alt="Итог заказа после торга">
+            </div>
           </div>
         </div>
       </div>

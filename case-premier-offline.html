@@ -27,7 +27,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=1ed3801b">
+<link rel="stylesheet" href="site.css?v=7561fd0d">
 <!-- Мост захвата в Figma: грузится только при открытии страницы
      с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
 <script>
@@ -77,14 +77,22 @@ if (location.hash.includes('figmacapture')) {
       <div class="carousel carousel--wide" data-carousel>
         <div class="carousel__viewport">
           <div class="carousel__track">
-            <img class="carousel__slide" src="assets/case/off-hero-1.webp" width="640" height="450"
-                 alt="Список серий с кнопкой «Загрузить 1 сезон»">
-            <img class="carousel__slide" src="assets/case/off-hero-2.webp" width="640" height="450"
-                 alt="Настройки качества загрузки и лимита по Wi-Fi">
-            <img class="carousel__slide" src="assets/case/off-hero-3.webp" width="640" height="450"
-                 alt="Загрузка в процессе: прогресс по каждой серии">
-            <img class="carousel__slide" src="assets/case/off-hero-4.webp" width="640" height="450"
-                 alt="Раздел загрузок с ошибкой на одной из серий">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/off-hero-1.webp" width="640" height="450"
+                   alt="Список серий с кнопкой «Загрузить 1 сезон»">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/off-hero-2.webp" width="640" height="450"
+                   alt="Настройки качества загрузки и лимита по Wi-Fi">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/off-hero-3.webp" width="640" height="450"
+                   alt="Загрузка в процессе: прогресс по каждой серии">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="assets/case/off-hero-4.webp" width="640" height="450"
+                   alt="Раздел загрузок с ошибкой на одной из серий">
+            </div>
           </div>
         </div>
       </div>
