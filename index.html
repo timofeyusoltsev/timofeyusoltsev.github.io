@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/caveat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=9cc6299a">
+<link rel="stylesheet" href="site.css?v=c569a646">
 <!-- Figma capture bridge: loaded only when the page is opened with a
      #figmacapture=... hash, so the third-party script never ships to visitors. -->
 <script>
@@ -256,17 +256,6 @@ if (location.hash.includes('figmacapture')) {
 
 </main>
 
-<script>
-// During a Figma capture nothing is scrolled, so reveal everything up front —
-// otherwise every below-the-fold block would be exported at opacity 0.
-if (location.hash.includes('figmacapture')) {
-  document.querySelectorAll('.rv, .stg').forEach(el => el.classList.add('in'));
-} else {
-  const io = new IntersectionObserver((es) => {
-    es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
-}
-</script>
+<script src="site.js?v=5bc62b17" defer></script>
 </body>
 </html>

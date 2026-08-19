@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=9cc6299a">
+<link rel="stylesheet" href="site.css?v=c569a646">
 </head>
 <body>
 
@@ -60,13 +60,25 @@
     </dl>
 
     <figure class="fig rv">
-      <img src="assets/case/off-hero-row.webp" width="951" height="450"
-           alt="Мобильный PREMIER: список серий с загрузкой сезона и настройки качества загрузки">
+      <div class="carousel" data-carousel style="--slide-w:640px">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <img class="carousel__slide" src="assets/case/off-hero-1.webp" width="640" height="450"
+                 alt="Список серий с кнопкой «Загрузить 1 сезон»">
+            <img class="carousel__slide" src="assets/case/off-hero-2.webp" width="640" height="450"
+                 alt="Настройки качества загрузки и лимита по Wi-Fi">
+            <img class="carousel__slide" src="assets/case/off-hero-3.webp" width="640" height="450"
+                 alt="Загрузка в процессе: прогресс по каждой серии">
+            <img class="carousel__slide" src="assets/case/off-hero-4.webp" width="640" height="450"
+                 alt="Раздел загрузок с ошибкой на одной из серий">
+          </div>
+        </div>
+      </div>
       <figcaption>Сценарий: скачал онлайн → посмотрел оффлайн</figcaption>
     </figure>
   </div>
 
-  <section class="sec sec--line wrap">
+  <section class="sec wrap">
     <div class="cs rv">
       <span class="eyebrow">Аудитория</span>
       <h2>Кому это нужно и почему<br>это не второстепенная функция</h2>
@@ -201,11 +213,6 @@
 
 </main>
 
-<script>
-const io = new IntersectionObserver((es) => {
-  es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { rootMargin: '0px 0px -6% 0px' });
-document.querySelectorAll('.rv, .stg').forEach(el => io.observe(el));
-</script>
+<script src="site.js?v=5bc62b17" defer></script>
 </body>
 </html>
