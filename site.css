@@ -393,10 +393,6 @@ img{display:block}
   line-height:1.1; max-width:20ch}
 .chero__lead{color:var(--ink-2); font-size:clamp(15px,1.4vw,18px); line-height:1.6; max-width:54ch}
 
-.back{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-3);
-  transition:color .25s var(--ease)}
-.back:hover{color:var(--ink)}
-.back svg{width:14px; height:14px}
 
 .facts{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap);
   margin-top:clamp(34px,4.5vw,56px); padding-top:26px; border-top:1px solid var(--line)}
