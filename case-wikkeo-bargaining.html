@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=6968597b">
+<link rel="stylesheet" href="site.css?v=5de07f3b">
 <!-- Мост захвата в Figma: грузится только при открытии страницы
      с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
 <script>
@@ -66,9 +66,9 @@ if (location.hash.includes('figmacapture')) {
     </dl>
 
     <figure class="fig rv">
-      <img src="assets/case/bar-hero-row.webp" width="472" height="454"
+      <img class="fig__img" src="assets/case/bar-hero-row.webp" width="472" height="454"
            alt="Экран заказа WIKKEO с новой ценой после торга и экран продавца со скидкой на заказ">
-      <figcaption>Слева — заказ покупателя с новой ценой, справа — управление скидкой у продавца</figcaption>
+      <figcaption>Слева — заказ покупателя с новой ценой, справа — управление скидкой у продавца</figcaption>
     </figure>
   </div>
 
@@ -162,28 +162,37 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <div class="carousel" data-carousel data-tabs="Покупатель|Продавец">
+      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
         <div class="carousel__viewport">
           <div class="carousel__track">
-            <div class="carousel__pane">
-              <div class="fig__pan">
-                <img src="assets/case/bar-buyer-row.webp" width="571" height="361"
-                     alt="Экраны покупателя: карточка товара с онбордингом торга, товар с бейджем «Возможен торг», заказ со скидкой">
-              </div>
-            </div>
-            <div class="carousel__pane">
-              <div class="fig__pan">
-                <img src="assets/case/bar-seller-row.webp" width="748" height="356"
-                     alt="Экраны продавца: настройка «Возможен торг», детали заказа, новая стоимость заказа и итог после торга">
-              </div>
-            </div>
+            <img class="carousel__slide" src="assets/case/bar-buyer-1.webp" width="190" height="361"
+                 alt="Карточка товара с онбордингом торга">
+            <img class="carousel__slide" src="assets/case/bar-buyer-2.webp" width="204" height="361"
+                 alt="Товар с бейджем «Возможен торг»">
+            <img class="carousel__slide" src="assets/case/bar-buyer-3.webp" width="188" height="361"
+                 alt="Заказ покупателя с новой ценой после торга">
           </div>
         </div>
       </div>
-      <figcaption class="fig__caps">
-        <span>Сценарий покупателя: оформляет товар, пишет продавцу, продавец дает скидку</span>
-        <span>Сценарий продавца: выставляет в ЛК возможность торговаться с ним</span>
-      </figcaption>
+      <figcaption>Сценарий покупателя: оформляет товар, пишет продавцу, продавец дает скидку</figcaption>
+    </figure>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <img class="carousel__slide" src="assets/case/bar-seller-1.webp" width="183" height="356"
+                 alt="Настройка «Возможен торг» в кабинете продавца">
+            <img class="carousel__slide" src="assets/case/bar-seller-2.webp" width="199" height="356"
+                 alt="Детали заказа со скидкой за торг">
+            <img class="carousel__slide" src="assets/case/bar-seller-3.webp" width="205" height="356"
+                 alt="Новая стоимость заказа">
+            <img class="carousel__slide" src="assets/case/bar-seller-4.webp" width="178" height="356"
+                 alt="Итог заказа после торга">
+          </div>
+        </div>
+      </div>
+      <figcaption>Сценарий продавца: выставляет в ЛК возможность торговаться с ним</figcaption>
     </figure>
   </section>
 
@@ -224,6 +233,6 @@ if (location.hash.includes('figmacapture')) {
 
 </main>
 
-<script src="site.js?v=2ff4927e" defer></script>
+<script src="site.js?v=9a00e7fd" defer></script>
 </body>
 </html>

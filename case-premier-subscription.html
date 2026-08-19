@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=6968597b">
+<link rel="stylesheet" href="site.css?v=5de07f3b">
 <!-- Мост захвата в Figma: грузится только при открытии страницы
      с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
 <script>
@@ -66,9 +66,9 @@ if (location.hash.includes('figmacapture')) {
     </dl>
 
     <figure class="fig rv">
-      <img src="assets/case/sub-hero.webp" width="607" height="640"
+      <img class="fig__img" src="assets/case/sub-hero.webp" width="607" height="640"
            alt="Экран успеха после оформления подписки PREMIER с кликабельным списком партнеров">
-      <figcaption>Экран успеха: с кликабельным списком партнеров и СТА кнопкой</figcaption>
+      <figcaption>Экран успеха: с кликабельным списком партнеров и СТА кнопкой</figcaption>
     </figure>
   </div>
 
@@ -98,7 +98,7 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <img src="assets/case/sub-flow.webp" width="910" height="299"
+      <img class="fig__img" src="assets/case/sub-flow.webp" width="910" height="299"
            alt="Начало продуктового флоу единой подписки PREMIER">
       <figcaption>Начало продуктового флоу</figcaption>
     </figure>
@@ -172,11 +172,21 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <div class="fig__pan">
-        <img src="assets/case/sub-screens-row.webp" width="730" height="356"
-             alt="Экраны сценария: витрина подписки, выбор способа оплаты, экран успеха и активная подписка">
+      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <img class="carousel__slide" src="assets/case/sub-screens-1.webp" width="179" height="356"
+                 alt="Витрина подписки: состав пакета и тарифы">
+            <img class="carousel__slide" src="assets/case/sub-screens-2.webp" width="194" height="356"
+                 alt="Оформление подписки и выбор способа оплаты">
+            <img class="carousel__slide" src="assets/case/sub-screens-3.webp" width="194" height="356"
+                 alt="Экран успеха после оплаты">
+            <img class="carousel__slide" src="assets/case/sub-screens-4.webp" width="180" height="356"
+                 alt="Активная подписка в профиле">
+          </div>
+        </div>
       </div>
-      <figcaption>Путь покупки целиком и экраны сценария</figcaption>
+      <figcaption>Экраны сценария покупки</figcaption>
     </figure>
   </section>
 
@@ -218,6 +228,6 @@ if (location.hash.includes('figmacapture')) {
 
 </main>
 
-<script src="site.js?v=2ff4927e" defer></script>
+<script src="site.js?v=9a00e7fd" defer></script>
 </body>
 </html>

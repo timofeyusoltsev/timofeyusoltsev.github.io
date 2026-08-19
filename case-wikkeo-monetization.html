@@ -19,7 +19,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=6968597b">
+<link rel="stylesheet" href="site.css?v=5de07f3b">
 <!-- Мост захвата в Figma: грузится только при открытии страницы
      с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
 <script>
@@ -66,7 +66,7 @@ if (location.hash.includes('figmacapture')) {
     </dl>
 
     <figure class="fig rv">
-      <div class="carousel" data-carousel>
+      <div class="carousel carousel--wide" data-carousel>
         <div class="carousel__viewport">
           <div class="carousel__track">
             <img class="carousel__slide" src="assets/case/mon-hero-1.webp" width="800" height="450"
@@ -76,7 +76,7 @@ if (location.hash.includes('figmacapture')) {
           </div>
         </div>
       </div>
-      <figcaption>Раздел «Продвижение» в кабинете продавца</figcaption>
+      <figcaption>Раздел «Продвижение» в кабинете продавца</figcaption>
     </figure>
   </div>
 
@@ -170,11 +170,23 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <div class="fig__pan">
-        <img src="assets/case/mon-flow-row.webp" width="982" height="429"
-             alt="Экраны кабинета продавца: пустое состояние рассылки, создание рассылки, выбор товара и расчет стоимости">
+      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <img class="carousel__slide" src="assets/case/mon-flow-1.webp" width="181" height="425"
+                 alt="Рассылка по чатам: баланс пуст, рассылок еще нет">
+            <img class="carousel__slide" src="assets/case/mon-flow-2.webp" width="191" height="425"
+                 alt="Создание рассылки: выбор товара и тип аудитории">
+            <img class="carousel__slide" src="assets/case/mon-flow-3.webp" width="193" height="425"
+                 alt="Выбор товара из каталога продавца">
+            <img class="carousel__slide" src="assets/case/mon-flow-4.webp" width="192" height="425"
+                 alt="Расчет охвата и стоимости перед запуском">
+            <img class="carousel__slide" src="assets/case/mon-flow-5.webp" width="183" height="425"
+                 alt="Готовое предложение в чате у покупателя">
+          </div>
+        </div>
       </div>
-      <figcaption>Сценарий продавца: пополнение баланса, выбор сегмента и расчет стоимости</figcaption>
+      <figcaption>Сценарий продавца: пополнение баланса, выбор сегмента и расчет стоимости</figcaption>
     </figure>
 
     <div class="cs rv">
@@ -185,11 +197,17 @@ if (location.hash.includes('figmacapture')) {
     </div>
 
     <figure class="fig rv">
-      <div class="fig__pan">
-        <img src="assets/case/mon-chat-row.webp" width="850" height="505"
-             alt="Предложение от продавца в чате покупателя и тот же чат в кабинете продавца">
+      <div class="carousel carousel--phones" data-carousel style="--slide-gap:24px">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <img class="carousel__slide" src="assets/case/mon-chat-1.webp" width="211" height="505"
+                 alt="Предложение от продавца в чате покупателя">
+            <img class="carousel__slide" src="assets/case/mon-chat-2.webp" width="578" height="505"
+                 alt="Тот же чат со стороны кабинета продавца">
+          </div>
+        </div>
       </div>
-      <figcaption>Предложение приходит в чат с продавцом</figcaption>
+      <figcaption>Предложение приходит в чат с продавцом</figcaption>
     </figure>
   </section>
 
@@ -227,6 +245,6 @@ if (location.hash.includes('figmacapture')) {
 
 </main>
 
-<script src="site.js?v=2ff4927e" defer></script>
+<script src="site.js?v=9a00e7fd" defer></script>
 </body>
 </html>

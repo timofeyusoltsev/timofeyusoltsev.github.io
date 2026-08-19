@@ -474,7 +474,6 @@ img{display:block}
 .fig + .cs, .fig + .steps, .fig + .calls{margin-top:var(--fig-gap)}
 /* если визуал закрывает секцию, подрезаем её нижний отступ до той же величины */
 .sec > .fig:last-child{margin-bottom:calc(var(--fig-gap) - var(--sec-pad))}
-.fig img{display:block; max-width:100%; height:auto}
 .fig figcaption{font-size:13px; line-height:1.6; color:var(--ink-3); text-align:center}
 /* ── карусель экранов ──────────────────────────────────────────────
    Дорожка задана разметкой, стрелки и точки досыпает site.js.
@@ -487,10 +486,19 @@ img{display:block}
 .carousel__track::-webkit-scrollbar{display:none}
 .carousel__track.is-drag{cursor:grabbing; scroll-snap-type:none; scroll-behavior:auto}
 .carousel__track > *{flex:0 0 auto; scroll-snap-align:center}
-.carousel__slide{width:var(--slide-w,800px); max-width:100%; height:auto;
+/* Слайд задаётся ВЫСОТОЙ, а не шириной: только так экраны разной ширины
+   (телефон рядом с кабинетом) стоят в ленте в одном масштабе.
+   Высота тянется за шириной окна, чтобы на телефоне помещался один экран
+   с подглядыванием следующего, а на десктопе — три. */
+.carousel--phones{--slide-h:clamp(430px,46vw,620px)}
+.carousel--wide{--slide-h:clamp(200px,25vw,450px)}
+.carousel__slide{height:var(--slide-h,450px); width:auto; max-width:none;
   border-radius:12px; border:1px solid var(--line);
   box-shadow:0 34px 70px -34px rgba(0,0,0,.12);
-  user-select:none; -webkit-user-drag:none}
+  cursor:zoom-in; user-select:none; -webkit-user-drag:none}
+/* одиночный визуал: листать нечего, вписываем по ширине карточки */
+.fig__img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line);
+  box-shadow:0 34px 70px -34px rgba(0,0,0,.12); cursor:zoom-in}
 
 /* стрелки по бокам карточки, по вертикали — по центру ленты */
 .carousel__nav{position:absolute; top:50%; z-index:2;
@@ -523,25 +531,6 @@ img{display:block}
 
 .carousel__pane{display:flex; flex-direction:column; align-items:center; width:100%}
 .carousel__pane img{max-width:100%; height:auto}
-/* у каждого слайда своя подпись, но стоит она под точками, как во всех карточках.
-   Грид кладёт подписи друг на друга — высота не скачет при переключении. */
-.fig__caps{display:grid; width:100%}
-.fig__caps > span{grid-area:1/1; font-size:13px; line-height:1.6; color:var(--ink-3);
-  text-align:center; opacity:0; transition:opacity .25s var(--ease)}
-.fig__caps > span.is-on{opacity:1}
-/* ── переключатель именованных сценариев ──────────────────────────────
-   Когда слайды не безымянная лента, а два названных сценария, точки не
-   отвечают на вопрос «где я» — нужен сегментированный переключатель с
-   подписями. На узком экране он заменяет точки и стрелки. */
-.carousel__tabs{display:none; align-self:center; gap:2px; padding:2px;
-  border:1px solid var(--line); border-radius:var(--r-pill); background:var(--fill-2)}
-.carousel__tab{height:30px; padding:0 14px; border:0; border-radius:var(--r-pill);
-  background:transparent; font-family:inherit; font-size:13px; color:var(--ink-2);
-  white-space:nowrap; cursor:pointer;
-  transition:background-color .2s var(--ease-out), color .2s var(--ease-out)}
-.carousel__tab[aria-selected="true"]{background:var(--page); color:var(--ink);
-  box-shadow:0 1px 3px rgba(0,0,0,.14)}
-
 @media(max-width:820px){
   .carousel__nav--prev{left:-6px}
   .carousel__nav--next{right:-6px}
@@ -550,26 +539,62 @@ img{display:block}
   .fig{margin-inline:0; padding:clamp(16px,4vw,28px)}
 }
 
-/* ── карточки-визуалы на телефоне ─────────────────────────────────────
-   Ряд из нескольких экранов, ужатый до ширины телефона, превращается в
-   марки: 190px экрана становятся 60. Поэтому ряд сохраняет читаемый
-   масштаб и едет вбок внутри карточки — подрезанный край показывает,
-   что дальше есть ещё. */
-@media(max-width:700px){
-  .fig__pan{width:100%; overflow-x:auto; overscroll-behavior-x:contain;
-    -webkit-overflow-scrolling:touch; scrollbar-width:none}
-  .fig__pan::-webkit-scrollbar{display:none}
-  .fig__pan img{width:auto; max-width:none; height:var(--pan-h,300px)}
+/* ═══ ПРОСМОТР ВО ВЕСЬ ЭКРАН ═══
+   Любой визуал открывается по тапу. Затемнение мягкое, а не чёрное — экраны
+   продуктов светлые, и на чистом чёрном они выглядят вырезанными. */
+.lb{position:fixed; inset:0; z-index:100; display:grid; grid-template-rows:1fr auto;
+  align-items:center; justify-items:center; gap:18px; padding:64px 20px 24px;
+  background:rgba(17,17,17,.86); backdrop-filter:blur(10px);
+  animation:lb-in .22s var(--ease-out)}
+.lb[hidden]{display:none}
+@keyframes lb-in{from{opacity:0} to{opacity:1}}
 
-  /* в режиме переключателя лента перестаёт быть лентой: показан один
-     сценарий, иначе внутри бокового скролла оказался бы ещё один */
-  .carousel.is-tabbed .carousel__tabs{display:flex}
-  .carousel.is-tabbed .carousel__dots{display:none}
-  .carousel.is-tabbed .carousel__nav{display:none}
-  .carousel.is-tabbed .carousel__track{display:block; overflow:visible;
-    scroll-snap-type:none; cursor:auto}
-  .carousel.is-tabbed .carousel__pane{display:none}
-  .carousel.is-tabbed .carousel__pane.is-on{display:flex}
+.lb__fig{display:flex; flex-direction:column; align-items:center; gap:16px;
+  min-height:0; max-width:100%}
+.lb__img{max-width:min(1400px,100%); max-height:calc(100dvh - 190px);
+  width:auto; height:auto; object-fit:contain; border-radius:12px;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
+.lb__cap{max-width:60ch; font-size:14px; line-height:1.55; text-align:center;
+  color:var(--ink-on-dark-2)}
+
+.lb__close{position:absolute; top:16px; right:16px; width:44px; height:44px; padding:0;
+  border-radius:var(--r-pill); border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08); color:var(--ink-on-dark);
+  display:grid; place-items:center; cursor:pointer;
+  transition:background-color .2s var(--ease-out), border-color .2s var(--ease-out),
+    transform .2s var(--ease-out)}
+.lb__close:hover{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.32);
+  transform:scale(1.06)}
+.lb__close svg{width:18px; height:18px}
+
+/* стрелки те же, что в карточке, только на тёмном */
+.lb__nav{position:absolute; top:50%; transform:translateY(-50%) scale(1);
+  width:44px; height:44px; padding:0; border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08);
+  color:var(--ink-on-dark); display:grid; place-items:center; cursor:pointer;
+  transition:opacity .2s var(--ease), background-color .2s var(--ease-out),
+    border-color .2s var(--ease-out), transform .2s var(--ease-out)}
+.lb__nav:hover{background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.32);
+  transform:translateY(-50%) scale(1.1)}
+.lb__nav:active{transform:translateY(-50%) scale(.96)}
+.lb__nav svg{width:18px; height:18px}
+.lb__nav--prev{left:16px}
+.lb__nav--next{right:16px}
+.lb__nav[disabled]{opacity:0; pointer-events:none}
+.lb__nav[hidden]{display:none}
+
+.lb__dots{display:flex; justify-content:center; gap:7px}
+.lb__dots[hidden]{display:none}
+.lb__dots .carousel__dot{background:rgba(255,255,255,.3)}
+.lb__dots .carousel__dot:hover{background:rgba(255,255,255,.55)}
+.lb__dots .carousel__dot[aria-current="true"]{background:#fff}
+
+@media(max-width:700px){
+  .lb{padding:60px 12px 20px}
+  .lb__img{max-height:calc(100dvh - 176px)}
+  .lb__nav{width:40px; height:40px}
+  .lb__nav--prev{left:8px}
+  .lb__nav--next{right:8px}
 }
 
 /* ═══ CASE PAGE — decisions taken and dropped ═══ */
