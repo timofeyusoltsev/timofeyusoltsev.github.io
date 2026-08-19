@@ -77,6 +77,8 @@
      modest headings, tall blocks. Air comes from block height, not type size. */
   --sec-pad:clamp(72px,10vw,144px);
   --head-gap:clamp(36px,4.6vw,64px);
+  /* воздух вокруг карточки-визуала — одинаковый сверху и снизу */
+  --fig-gap:clamp(34px,4.5vw,56px);
   --gap:clamp(14px,1.7vw,24px);
 
   --font:'Inter';
@@ -429,9 +431,14 @@ img{display:block}
 /* карточка из макета: 992 внутри колонки 1072 (отсюда поля по 40),
    фон #FAFAFA, радиус 16, внутренние поля 40, колонка контента 910.
    Экраны выгружены из фигмы в своём размере и стоят по центру карточки. */
-.fig{margin-top:clamp(34px,4.5vw,56px); margin-inline:40px;
+.fig{margin-top:var(--fig-gap); margin-inline:40px;
   padding:40px; border-radius:16px; background:#FAFAFA;
   display:flex; flex-direction:column; align-items:center; gap:16px}
+/* под карточкой столько же воздуха, сколько над ней: 144px внутри секции
+   читались как разрыв между секциями, а не как пауза после картинки */
+.fig + .cs, .fig + .steps, .fig + .calls{margin-top:var(--fig-gap)}
+/* если визуал закрывает секцию, подрезаем её нижний отступ до той же величины */
+.sec > .fig:last-child{margin-bottom:calc(var(--fig-gap) - var(--sec-pad))}
 .fig img{display:block; max-width:100%; height:auto}
 .fig figcaption{font-size:13px; line-height:1.6; color:var(--ink-3); text-align:center}
 /* ── карусель экранов ──────────────────────────────────────────────
