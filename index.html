@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/caveat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=1ed3801b">
+<link rel="stylesheet" href="site.css?v=626732e6">
 <!-- Figma capture bridge: loaded only when the page is opened with a
      #figmacapture=... hash, so the third-party script never ships to visitors. -->
 <script>
@@ -241,27 +241,30 @@ if (location.hash.includes('figmacapture')) {
     </div>
   </section>
 
-  <!-- ═══ CTA ═══ -->
-  <section class="ctaband" id="contact">
-    <div class="wrap">
-      <div class="cta rv">
-        <h2>Открыт к продуктовым<br>и дизайн-системным<br>задачам</h2>
-        <div class="hero__acts" style="justify-content:center">
-          <a class="btn btn--primary btn--lg" href="https://t.me/norse_tm" target="_blank" rel="noopener">
-            Написать в Телеграм
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-          <a class="btn btn--lg" href="mailto:timofeyusoltsev1@gmail.com">timofeyusoltsev1@gmail.com</a>
+  <!-- финальный экран: призыв и футер живут одним экраном, к нему липнет прокрутка -->
+  <div class="endscreen">
+    <!-- ═══ CTA ═══ -->
+    <section class="ctaband" id="contact">
+      <div class="wrap">
+        <div class="cta rv">
+          <h2>Открыт к продуктовым<br>и дизайн-системным<br>задачам</h2>
+          <div class="hero__acts" style="justify-content:center">
+            <a class="btn btn--primary btn--lg" href="https://t.me/norse_tm" target="_blank" rel="noopener">
+              Написать в Телеграм
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <a class="btn btn--lg" href="mailto:timofeyusoltsev1@gmail.com">timofeyusoltsev1@gmail.com</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="wrap">
-    <footer class="foot">
-      <span>© 2026 Тимофей Усольцев</span>
-      <span>Сделано руками</span>
-    </footer>
+    <div class="wrap">
+      <footer class="foot">
+        <span>© 2026 Тимофей Усольцев</span>
+        <span>Сделано руками</span>
+      </footer>
+    </div>
   </div>
 
 </main>
