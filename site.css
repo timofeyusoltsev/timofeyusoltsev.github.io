@@ -191,6 +191,9 @@ img{display:block}
   line-height:0; letter-spacing:-1px; color:#000}
 .hero__side{display:flex; flex-direction:column; gap:22px; padding-bottom:6px}
 .hero__acts{display:flex; flex-wrap:wrap; gap:8px}
+/* две второстепенные кнопки лежат в своей строке: на узком экране они уходят
+   под главную, а шаг внутри пары остаётся тем же, что и до главной кнопки */
+.hero__acts__row{display:flex; flex-wrap:wrap; gap:inherit}
 @media(max-width:860px){
   .hero__in{grid-template-columns:1fr; align-items:start; gap:26px}
   /* пятна заданы процентами от высоты шапки. На телефоне шапка втрое выше
@@ -200,12 +203,12 @@ img{display:block}
   .hero::after{left:20%;  top:-90px}
 }
 /* на узком экране три кнопки в ряд не помещаются и «LinkedIn» повисает одна.
-   Главное действие занимает первую строку целиком, две второстепенные — вторую. */
+   Главное действие занимает первую строку, две второстепенные — вторую.
+   Раньше это делал грид, но первая кнопка шире двух нижних вместе, и грид
+   растягивал под неё колонки — «Почта» стояла в колонке шире себя самой,
+   отчего просвет до «LinkedIn» был больше вертикального. */
 @media(max-width:460px){
-  .hero__side .hero__acts{display:grid; grid-template-columns:auto auto;
-    gap:12px; justify-content:start; align-items:start}
-  .hero__side .hero__acts > *{justify-self:start}
-  .hero__side .hero__acts > :first-child{grid-column:1 / -1}
+  .hero__side .hero__acts{flex-direction:column; align-items:flex-start; gap:12px}
 }
 
 /* logos strip */
@@ -390,6 +393,14 @@ img{display:block}
 .cta h2{font-size:clamp(28px,3.6vw,46px); font-weight:400; letter-spacing:-0.02em;
   line-height:1.298; max-width:512px}
 .cta .btn{font-weight:500}
+/* обе кнопки под заголовком одной ширины: колонки 1fr в гриде, ширина
+   которого задана содержимым, выравниваются по самой длинной надписи */
+.cta .hero__acts{display:grid; grid-auto-flow:column; grid-auto-columns:1fr;
+  gap:8px; justify-content:center}
+.cta .hero__acts .btn{justify-content:center}
+@media(max-width:560px){
+  .cta .hero__acts{grid-auto-flow:row; gap:12px}
+}
 @media(max-width:860px){
   /* та же история, что и в шапке: пятна привязаны к высоте блока */
   .cta::before,.cta::after{width:156%}
@@ -493,12 +504,11 @@ img{display:block}
 .carousel--phones{--slide-h:clamp(430px,46vw,620px)}
 .carousel--wide{--slide-h:clamp(200px,25vw,450px)}
 .carousel__slide{height:var(--slide-h,450px); width:auto; max-width:none;
-  border-radius:12px; border:1px solid var(--line);
-  box-shadow:0 34px 70px -34px rgba(0,0,0,.12);
   cursor:zoom-in; user-select:none; -webkit-user-drag:none}
+/* Никаких обводок и теней поверх макетов: они выгружены из фигмы со своими
+   краями, а лишний кант читался как рамка и раздувал сам макет. */
 /* одиночный визуал: листать нечего, вписываем по ширине карточки */
-.fig__img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line);
-  box-shadow:0 34px 70px -34px rgba(0,0,0,.12); cursor:zoom-in}
+.fig__img{max-width:100%; height:auto; cursor:zoom-in}
 
 /* стрелки по бокам карточки, по вертикали — по центру ленты */
 .carousel__nav{position:absolute; top:50%; z-index:2;
