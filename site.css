@@ -405,22 +405,6 @@ img{display:block}
 @media(max-width:560px){
   .cta .hero__acts{grid-auto-flow:row; gap:12px}
 }
-/* На телефоне призыв и футер образуют один экран, к которому прокрутка
-   примагничивается: заголовок с кнопками встаёт по центру, футер садится
-   на нижний край, и под ним не остаётся пустоты.
-   proximity, а не mandatory — магнит срабатывает только рядом с блоком
-   и не держит остальную страницу.
-   svh, а не dvh: иначе экран дёргался бы при сворачивании панелей браузера. */
-@media(max-width:700px){
-  html{scroll-snap-type:y proximity}
-  .endscreen{position:relative; min-height:100svh; display:grid; align-content:center;
-    scroll-snap-align:center}
-  .ctaband{min-height:0; display:grid; align-content:center}
-  .cta{min-height:0}
-  /* футер снят с потока, иначе он утягивал призыв выше середины экрана */
-  .endscreen > .wrap:last-child{position:absolute; inset:auto 0 0}
-  .endscreen .foot{margin-top:0}
-}
 @media(max-width:860px){
   /* та же история, что и в шапке: пятна привязаны к высоте блока */
   .cta::before,.cta::after{width:156%}
