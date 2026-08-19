@@ -110,6 +110,14 @@ img{display:block}
 
 :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:var(--r-xs)}
 
+/* Переносы строк, выставленные под широкую колонку, на телефоне рвут абзац
+   в лесенку: .nb — перенос только для десктопа, .mb — только для мобилы. */
+.mb{display:none}
+@media(max-width:700px){
+  .nb{display:none}
+  .mb{display:inline}
+}
+
 /* soft entrance only — no blur, no drift */
 .js .rv{opacity:0; transform:translateY(8px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
 .js .rv.in{opacity:1; transform:none}
@@ -182,6 +190,14 @@ img{display:block}
 .hero__acts{display:flex; flex-wrap:wrap; gap:8px}
 @media(max-width:860px){
   .hero__in{grid-template-columns:1fr; align-items:start; gap:26px}
+}
+/* на узком экране три кнопки в ряд не помещаются и «LinkedIn» повисает одна.
+   Главное действие занимает первую строку целиком, две второстепенные — вторую. */
+@media(max-width:460px){
+  .hero__side .hero__acts{display:grid; grid-template-columns:auto auto;
+    justify-content:start; align-items:start}
+  .hero__side .hero__acts > *{justify-self:start}
+  .hero__side .hero__acts > :first-child{grid-column:1 / -1}
 }
 
 /* logos strip */
@@ -295,6 +311,9 @@ img{display:block}
   .feature--rev .feature__body{order:1}
   .feature--rev .feature__media{order:2}
 }
+/* на телефоне визуал в этой карточке снят: заголовок, текст, две цифры
+   и кнопка уже рассказывают кейс, а скриншот кабинета на 350px нечитаем */
+@media(max-width:700px){ .feature__media{display:none} }
 
 /* ═══ EXPERIENCE TABLE ═══ */
 /* строки таблицы сняты с макета: 24px по вертикали, роль 17px,
@@ -494,12 +513,47 @@ img{display:block}
 .fig__caps > span{grid-area:1/1; font-size:13px; line-height:1.6; color:var(--ink-3);
   text-align:center; opacity:0; transition:opacity .25s var(--ease)}
 .fig__caps > span.is-on{opacity:1}
+/* ── переключатель именованных сценариев ──────────────────────────────
+   Когда слайды не безымянная лента, а два названных сценария, точки не
+   отвечают на вопрос «где я» — нужен сегментированный переключатель с
+   подписями. На узком экране он заменяет точки и стрелки. */
+.carousel__tabs{display:none; align-self:center; gap:2px; padding:2px;
+  border:1px solid var(--line); border-radius:var(--r-pill); background:var(--fill-2)}
+.carousel__tab{height:30px; padding:0 14px; border:0; border-radius:var(--r-pill);
+  background:transparent; font-family:inherit; font-size:13px; color:var(--ink-2);
+  white-space:nowrap; cursor:pointer;
+  transition:background-color .2s var(--ease-out), color .2s var(--ease-out)}
+.carousel__tab[aria-selected="true"]{background:var(--page); color:var(--ink);
+  box-shadow:0 1px 3px rgba(0,0,0,.14)}
+
 @media(max-width:820px){
   .carousel__nav--prev{left:-6px}
   .carousel__nav--next{right:-6px}
 }
 @media(max-width:820px){
   .fig{margin-inline:0; padding:clamp(16px,4vw,28px)}
+}
+
+/* ── карточки-визуалы на телефоне ─────────────────────────────────────
+   Ряд из нескольких экранов, ужатый до ширины телефона, превращается в
+   марки: 190px экрана становятся 60. Поэтому ряд сохраняет читаемый
+   масштаб и едет вбок внутри карточки — подрезанный край показывает,
+   что дальше есть ещё. */
+@media(max-width:700px){
+  .fig__pan{width:100%; overflow-x:auto; overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .fig__pan::-webkit-scrollbar{display:none}
+  .fig__pan img{width:auto; max-width:none; height:var(--pan-h,300px)}
+
+  /* в режиме переключателя лента перестаёт быть лентой: показан один
+     сценарий, иначе внутри бокового скролла оказался бы ещё один */
+  .carousel.is-tabbed .carousel__tabs{display:flex}
+  .carousel.is-tabbed .carousel__dots{display:none}
+  .carousel.is-tabbed .carousel__nav{display:none}
+  .carousel.is-tabbed .carousel__track{display:block; overflow:visible;
+    scroll-snap-type:none; cursor:auto}
+  .carousel.is-tabbed .carousel__pane{display:none}
+  .carousel.is-tabbed .carousel__pane.is-on{display:flex}
 }
 
 /* ═══ CASE PAGE — decisions taken and dropped ═══ */

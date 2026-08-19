@@ -50,8 +50,34 @@ const setupCarousel = (root) => {
   });
   root.append(dots);
 
+  // Именованные слайды («Покупатель» / «Продавец») на узком экране переключаются
+  // сегментированным контролом: точки не говорят, что где, а вложить боковую
+  // прокрутку ленты внутрь боковой прокрутки ряда экранов нельзя.
+  const labels = (root.dataset.tabs || '').split('|').filter(Boolean);
+  const narrow = window.matchMedia('(max-width:700px)');
+  const tabbed = () => labels.length === slides.length && narrow.matches;
+  let tabs = null;
+  if (labels.length === slides.length) {
+    tabs = document.createElement('div');
+    tabs.className = 'carousel__tabs';
+    tabs.setAttribute('role', 'tablist');
+    labels.forEach((label, i) => {
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'carousel__tab';
+      tab.setAttribute('role', 'tab');
+      tab.textContent = label;
+      tab.addEventListener('click', () => go(i));
+      tabs.append(tab);
+    });
+    root.append(tabs);
+  }
+
+  // выбранный сценарий в режиме переключателя: прокрутки там нет, спросить не у кого
+  let tabIndex = 0;
+
   // текущий слайд — тот, чей центр ближе всего к центру окна просмотра
-  const current = () => {
+  const nearest = () => {
     const middle = track.scrollLeft + track.clientWidth / 2;
     let best = 0, bestDist = Infinity;
     slides.forEach((s, i) => {
@@ -60,9 +86,12 @@ const setupCarousel = (root) => {
     });
     return best;
   };
+  const current = () => (tabbed() ? tabIndex : nearest());
 
   const go = (i) => {
-    const slide = slides[Math.max(0, Math.min(slides.length - 1, i))];
+    const n = Math.max(0, Math.min(slides.length - 1, i));
+    if (tabbed()) { tabIndex = n; sync(); return; }
+    const slide = slides[n];
     const left = slide.offsetLeft - (track.clientWidth - slide.offsetWidth) / 2;
     track.scrollTo({ left, behavior: 'smooth' });
   };
@@ -71,13 +100,26 @@ const setupCarousel = (root) => {
   const caps = root.parentElement && root.parentElement.querySelector('.fig__caps');
 
   const sync = () => {
+    const onTabs = tabbed();
+    root.classList.toggle('is-tabbed', onTabs);
     const i = current();
     Array.from(dots.children).forEach((d, n) =>
       d.setAttribute('aria-current', String(n === i)));
+    if (tabs) Array.from(tabs.children).forEach((t, n) =>
+      t.setAttribute('aria-selected', String(n === i)));
+    slides.forEach((s, n) => s.classList.toggle('is-on', n === i));
     if (caps) Array.from(caps.children).forEach((c, n) => c.classList.toggle('is-on', n === i));
-    prev.disabled = track.scrollLeft <= 1;
-    next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+    prev.disabled = onTabs ? i === 0 : track.scrollLeft <= 1;
+    next.disabled = onTabs
+      ? i === slides.length - 1
+      : track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
   };
+
+  // при переходе через границу ширины лента должна встать на тот же слайд
+  narrow.addEventListener('change', () => {
+    if (tabbed()) { tabIndex = nearest(); sync(); }  // лента → переключатель
+    else { sync(); go(tabIndex); }                   // переключатель → лента
+  });
 
   prev.addEventListener('click', () => go(current() - 1));
   next.addEventListener('click', () => go(current() + 1));
@@ -92,7 +134,7 @@ const setupCarousel = (root) => {
   // ленту можно и просто тянуть мышью; на тач-устройствах работает родная прокрутка
   let down = false, startX = 0, startLeft = 0, moved = 0;
   track.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'touch') return;
+    if (e.pointerType === 'touch' || tabbed()) return;
     down = true; moved = 0; startX = e.clientX; startLeft = track.scrollLeft;
     track.classList.add('is-drag');
     try { track.setPointerCapture(e.pointerId); } catch (err) { /* синтетика без захвата */ }
