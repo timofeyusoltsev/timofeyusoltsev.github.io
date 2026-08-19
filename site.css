@@ -455,14 +455,20 @@ img{display:block}
   user-select:none; -webkit-user-drag:none}
 
 /* стрелки по бокам карточки, по вертикали — по центру ленты */
-.carousel__nav{position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+.carousel__nav{position:absolute; top:50%; z-index:2;
   width:40px; height:40px; padding:0; border-radius:var(--r-pill);
   border:1px solid var(--line); background:rgba(255,255,255,.94);
   display:grid; place-items:center; cursor:pointer; color:var(--ink);
   box-shadow:0 6px 20px -8px rgba(0,0,0,.28);
-  transition:opacity .25s var(--ease), background-color .25s var(--ease),
-    border-color .25s var(--ease)}
-.carousel__nav:hover{background:#fff; border-color:var(--line-strong)}
+  /* transform держит и центровку по вертикали, и увеличение на ховере */
+  transform:translateY(-50%) scale(1);
+  transition:opacity .25s var(--ease), background-color .2s var(--ease-out),
+    border-color .2s var(--ease-out), color .2s var(--ease-out),
+    transform .2s var(--ease-out), box-shadow .2s var(--ease-out)}
+/* тот же жест, что у кружка со стрелкой в карточках кейсов: заливка чернеет */
+.carousel__nav:hover{background:var(--dark); border-color:var(--dark); color:#fff;
+  transform:translateY(-50%) scale(1.08); box-shadow:0 10px 26px -10px rgba(0,0,0,.45)}
+.carousel__nav:active{transform:translateY(-50%) scale(.96)}
 .carousel__nav svg{width:16px; height:16px}
 .carousel__nav--prev{left:-20px}
 .carousel__nav--next{right:-20px}
@@ -476,13 +482,11 @@ img{display:block}
 .carousel__dot:hover{background:rgba(0,0,0,.32)}
 .carousel__dot[aria-current="true"]{background:rgba(0,0,0,.55)}
 
-/* вариант, где слайды — сами карточки-фигуры */
-/* width:auto — иначе ширина 100% из базового правила съедает боковые поля */
-.carousel--cards{margin-top:clamp(34px,4.5vw,56px); margin-inline:40px; width:auto;
-  --slide-gap:24px}
-.carousel--cards .fig{margin:0; width:100%}
+/* слайд с собственной подписью — когда у каждого экрана свой текст */
+.carousel__pane{display:flex; flex-direction:column; align-items:center; gap:16px; width:100%}
+.carousel__pane img{max-width:100%; height:auto}
+.carousel__cap{font-size:13px; line-height:1.6; color:var(--ink-3); text-align:center}
 @media(max-width:820px){
-  .carousel--cards{margin-inline:0}
   .carousel__nav--prev{left:-6px}
   .carousel__nav--next{right:-6px}
 }
