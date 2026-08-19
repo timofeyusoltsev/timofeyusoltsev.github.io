@@ -337,10 +337,14 @@ img{display:block}
   font-size:13.5px; line-height:1.55; color:var(--ink-3)}
 .exp .place{width:88px; text-align:center}
 .exp .yr{width:88px; white-space:nowrap; font-variant-numeric:tabular-nums; text-align:center}
-@media(max-width:720px){ .exp__meta{gap:20px} .exp .place,.exp .yr{width:auto} }
+/* Колонки остаются жёсткими и на телефоне, иначе компания едет вслед за
+   длиной должности. Размеры сняты с макета: компания 65, годы 88, шаг 12 —
+   правый край годов ложится на край колонки контента. */
 @media(max-width:720px){
-  .exp li{grid-template-columns:1fr auto; gap:6px 14px}
-  .exp .place{grid-column:1; text-align:left}
+  .exp__meta{gap:12px}
+  .exp .place{width:65px}
+  .exp .yr{width:88px}
+  .exp .role{min-width:0}
 }
 
 /* ═══ STEPS — numbered columns, used on the case pages ═══ */
