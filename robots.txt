@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://usoltsev.design/sitemap.xml
+Sitemap: https://timofeyusoltsev.github.io/sitemap.xml
