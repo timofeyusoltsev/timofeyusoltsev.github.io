@@ -465,9 +465,10 @@ img{display:block}
   transition:opacity .25s var(--ease), background-color .2s var(--ease-out),
     border-color .2s var(--ease-out), color .2s var(--ease-out),
     transform .2s var(--ease-out), box-shadow .2s var(--ease-out)}
-/* тот же жест, что у кружка со стрелкой в карточках кейсов: заливка чернеет */
-.carousel__nav:hover{background:var(--dark); border-color:var(--dark); color:#fff;
-  transform:translateY(-50%) scale(1.08); box-shadow:0 10px 26px -10px rgba(0,0,0,.45)}
+/* кнопка остаётся светлой: чёрная заливка пропадала на тёмных экранах PREMIER.
+   Отклик даёт непрозрачный белый, тёмная обводка, увеличение и тень. */
+.carousel__nav:hover{background:#fff; border-color:rgba(0,0,0,.22); color:var(--dark);
+  transform:translateY(-50%) scale(1.1); box-shadow:0 12px 28px -10px rgba(0,0,0,.42)}
 .carousel__nav:active{transform:translateY(-50%) scale(.96)}
 .carousel__nav svg{width:16px; height:16px}
 .carousel__nav--prev{left:-20px}
