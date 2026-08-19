@@ -263,8 +263,14 @@ img{display:block}
 /* вся карточка кликабельна: ссылку кнопки растягиваем на весь блок,
    чтобы не вкладывать <a> в <a> и оставить один таб-стоп */
 .feature .btn::after{content:''; position:absolute; inset:0; z-index:1; border-radius:inherit}
-.feature:hover{border-color:var(--line-strong)}
-.feature:hover .btn{border-color:var(--line-strong); background:var(--page)}
+/* тот же отклик, что у маленьких карточек: заливка углубляется, а кнопка
+   чернеет так же, как там чернеет кружок со стрелкой.
+   fill → fill-2, потому что fill у этой карточки уже стоит в покое */
+.feature:hover{border-color:var(--line-strong); background:var(--fill-2)}
+.feature .btn{transition:background-color .3s var(--ease), border-color .3s var(--ease),
+  color .3s var(--ease)}
+.feature:hover .btn{background:var(--dark); border-color:var(--dark); color:#fff}
+.feature:hover .btn svg{opacity:.85}
 .feature__body{display:flex; flex-direction:column; gap:20px}
 .feature__ttl{font-size:clamp(21px,2.2vw,30px); font-weight:500; letter-spacing:var(--track); line-height:1.24}
 .feature__stats{display:flex; flex-wrap:wrap; gap:28px; padding-top:20px; border-top:1px solid var(--line)}
