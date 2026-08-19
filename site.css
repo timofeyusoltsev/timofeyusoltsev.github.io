@@ -514,10 +514,11 @@ img{display:block}
 .carousel__pane{flex:0 0 100%; display:flex; justify-content:center; align-items:center}
 .carousel__slide{height:var(--slide-h,450px); width:auto; max-width:100%;
   user-select:none; -webkit-user-drag:none}
-/* Никаких обводок и теней поверх макетов: они выгружены из фигмы со своими
-   краями, а лишний кант читался как рамка и раздувал сам макет.
-   Скруглить нужно только скриншоты браузера и плеера — у них край прямой. */
-.carousel--wide .carousel__slide{border-radius:12px}
+/* Экраны приложений выгружены из макетов со своими краями и контуром —
+   поверх них ничего не рисуем, иначе получается лишний кант.
+   А у скриншотов браузера и плеера край прямой и без контура: они нуждаются
+   и в скруглении, и в тонкой обводке, иначе растворяются в карточке. */
+.carousel--wide .carousel__slide{border-radius:12px; border:1px solid var(--line)}
 /* одиночный визуал: листать нечего, вписываем по ширине карточки */
 .fig__img{max-width:100%; height:auto}
 
