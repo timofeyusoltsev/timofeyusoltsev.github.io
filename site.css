@@ -98,6 +98,9 @@ h1,h2,h3,p{margin:0}
 /* браузер по умолчанию отступает dd на 40px — из-за этого значения
    в блоке «Роль / Период / Платформы / Результат» съезжали вправо от подписей */
 dl,dt,dd{margin:0}
+/* у figure браузер тоже держит свои поля — 40px по бокам. Из-за них
+   карточка с визуалом на главной была уже колонки контента. */
+figure{margin:0}
 a{color:inherit; text-decoration:none}
 ul{margin:0; padding:0; list-style:none}
 img{display:block}
@@ -190,12 +193,17 @@ img{display:block}
 .hero__acts{display:flex; flex-wrap:wrap; gap:8px}
 @media(max-width:860px){
   .hero__in{grid-template-columns:1fr; align-items:start; gap:26px}
+  /* пятна заданы процентами от высоты шапки. На телефоне шапка втрое выше
+     своей ширины, и оба пятна уезжали за верхний край — привязываем к ширине. */
+  .hero::before,.hero::after{width:127%}
+  .hero::before{left:-13%; top:-60px}
+  .hero::after{left:20%;  top:-90px}
 }
 /* на узком экране три кнопки в ряд не помещаются и «LinkedIn» повисает одна.
    Главное действие занимает первую строку целиком, две второстепенные — вторую. */
 @media(max-width:460px){
   .hero__side .hero__acts{display:grid; grid-template-columns:auto auto;
-    justify-content:start; align-items:start}
+    gap:12px; justify-content:start; align-items:start}
   .hero__side .hero__acts > *{justify-self:start}
   .hero__side .hero__acts > :first-child{grid-column:1 / -1}
 }
@@ -357,7 +365,10 @@ img{display:block}
    голубое -300/-319, пурпурное 288/-275 при размере 1500×750. */
 .ctaband{position:relative; overflow:hidden; padding-block:25px;
   border-top:1px solid var(--line)}
-.cta{position:relative; min-height:704px;
+/* высота полосы снята с макетов: 754 на десктопе и 627 на телефоне вместе
+   с полями полосы, то есть 704 и 577 у самой секции. Раньше на узком экране
+   min-height просто обнулялся, и блок схлопывался до высоты текста. */
+.cta{position:relative; min-height:clamp(577px,80vw,704px);
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; gap:36px}
 .cta::before, .cta::after{
@@ -379,7 +390,12 @@ img{display:block}
 .cta h2{font-size:clamp(28px,3.6vw,46px); font-weight:400; letter-spacing:-0.02em;
   line-height:1.298; max-width:512px}
 .cta .btn{font-weight:500}
-@media(max-width:820px){ .cta{min-height:0} }
+@media(max-width:860px){
+  /* та же история, что и в шапке: пятна привязаны к высоте блока */
+  .cta::before,.cta::after{width:156%}
+  .cta::before{left:-28%; top:-40px}
+  .cta::after{left:2%;    top:-75px}
+}
 
 /* ═══ FOOTER ═══ */
 .foot{padding:26px 0 40px; margin-top:clamp(40px,5vw,64px); border-top:1px solid var(--line);
