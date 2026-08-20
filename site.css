@@ -163,10 +163,7 @@ img{display:block}
 .btn--primary svg{opacity:.85}
 
 /* ═══ HERO ═══ */
-/* Шапка заканчивается тонкой строкой логотипов, а не визуалом — прежний
-   нижний отступ был рассчитан под крупный блок и оставлял ее висеть
-   посреди пустоты. Дальше идет своя отбивка секции. */
-.hero{position:relative; padding-block:clamp(88px,12vw,170px) clamp(30px,4vw,52px); overflow:hidden}
+.hero{position:relative; padding-block:clamp(88px,12vw,170px) clamp(56px,7vw,96px); overflow:hidden}
 /* два градиентных пятна из макета — голубое и пурпурное, со смещением друг относительно друга.
    Геометрия снята с фреймов Bubble Blur: 1500×750, эллипс 70.71% от бокса. */
 .hero::before, .hero::after{
@@ -280,6 +277,18 @@ img{display:block}
   font-variant-numeric:tabular-nums}
 .case__foot span{font-size:12.5px; color:var(--ink-3)}
 @media(max-width:940px){ .cases{grid-template-columns:1fr} }
+
+/* ═══ SHOWCASE — big product visual, as on interfere ═══ */
+.showcase{margin-top:104px; padding:clamp(20px,2.6vw,41px);
+  border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill)}
+.showcase__shot{display:block; border-radius:var(--r-lg)}
+.showcase img{width:100%; height:auto; border-radius:var(--r-lg); border:1px solid var(--line);
+  box-shadow:0 34px 70px -34px rgba(0,0,0,.42);
+  transition:border-color .3s var(--ease)}
+.showcase__shot:hover img{border-color:var(--line-strong)}
+.showcase figcaption{margin-top:16px; font-size:13px; color:var(--ink-3); text-align:center}
+/* на телефоне поля карточки съедают ширину, которой у кадра и так в обрез */
+@media(max-width:700px){ .showcase{margin-top:64px; padding:14px} }
 
 /* ═══ FEATURE — case block with visual ═══ */
 .feature{position:relative; display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(30px,4.4vw,72px);
