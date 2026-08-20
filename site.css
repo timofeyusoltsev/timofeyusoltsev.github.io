@@ -279,13 +279,22 @@ img{display:block}
 @media(max-width:940px){ .cases{grid-template-columns:1fr} }
 
 /* ═══ SHOWCASE — big product visual, as on interfere ═══ */
-.showcase{margin-top:104px; padding:clamp(20px,2.6vw,41px);
-  border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill)}
-.showcase__shot{display:block; border-radius:var(--r-lg)}
+.showcase{position:relative; margin-top:104px; padding:clamp(20px,2.6vw,41px);
+  border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill);
+  cursor:pointer; transition:border-color .3s var(--ease), background-color .3s var(--ease)}
+/* тот же прием, что у большой карточки кейса: ссылку растягиваем на весь блок,
+   чтобы кликался и скрин, и подпись, а таб-стоп оставался один */
+.showcase__shot{display:block}
+.showcase__shot::after{content:''; position:absolute; inset:0; z-index:1;
+  border-radius:var(--r-xl)}
 .showcase img{width:100%; height:auto; border-radius:var(--r-lg); border:1px solid var(--line);
   box-shadow:0 34px 70px -34px rgba(0,0,0,.42);
   transition:border-color .3s var(--ease)}
-.showcase__shot:hover img{border-color:var(--line-strong)}
+/* отклик тот же, что у карточек кейсов: рамка крепчает, заливка углубляется.
+   fill → fill-2, потому что fill у этой карточки уже стоит в покое.
+   Кружка со стрелкой тут нет, и чернеть в блоке нечему — только эти два слоя */
+.showcase:hover{border-color:var(--line-strong); background:var(--fill-2)}
+.showcase:hover img{border-color:var(--line-strong)}
 .showcase figcaption{margin-top:16px; font-size:13px; color:var(--ink-3); text-align:center}
 /* на телефоне поля карточки съедают ширину, которой у кадра и так в обрез */
 @media(max-width:700px){ .showcase{margin-top:64px; padding:14px} }
