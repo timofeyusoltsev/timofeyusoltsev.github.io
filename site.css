@@ -99,7 +99,7 @@ h1,h2,h3,p{margin:0}
    в блоке «Роль / Период / Платформы / Результат» съезжали вправо от подписей */
 dl,dt,dd{margin:0}
 /* у figure браузер тоже держит свои поля — 40px по бокам. Из-за них
-   карточка с визуалом на главной была уже колонки контента. */
+   визуалы в кейсах оказывались уже колонки контента. */
 figure{margin:0}
 a{color:inherit; text-decoration:none}
 ul{margin:0; padding:0; list-style:none}
@@ -163,7 +163,10 @@ img{display:block}
 .btn--primary svg{opacity:.85}
 
 /* ═══ HERO ═══ */
-.hero{position:relative; padding-block:clamp(88px,12vw,170px) clamp(56px,7vw,96px); overflow:hidden}
+/* Шапка заканчивается тонкой строкой логотипов, а не визуалом — прежний
+   нижний отступ был рассчитан под крупный блок и оставлял ее висеть
+   посреди пустоты. Дальше идет своя отбивка секции. */
+.hero{position:relative; padding-block:clamp(88px,12vw,170px) clamp(30px,4vw,52px); overflow:hidden}
 /* два градиентных пятна из макета — голубое и пурпурное, со смещением друг относительно друга.
    Геометрия снята с фреймов Bubble Blur: 1500×750, эллипс 70.71% от бокса. */
 .hero::before, .hero::after{
@@ -277,14 +280,6 @@ img{display:block}
   font-variant-numeric:tabular-nums}
 .case__foot span{font-size:12.5px; color:var(--ink-3)}
 @media(max-width:940px){ .cases{grid-template-columns:1fr} }
-
-/* ═══ SHOWCASE — big product visual, as on interfere ═══ */
-.showcase{margin-top:104px; padding:clamp(20px,2.6vw,41px);
-  border:1px solid var(--line); border-radius:var(--r-xl); background:var(--fill)}
-.showcase img{width:100%; height:auto; border-radius:var(--r-lg); border:1px solid var(--line);
-  box-shadow:0 34px 70px -34px rgba(0,0,0,.12);
-  box-shadow:0 34px 70px -34px rgba(0,0,0,.42)}
-.showcase figcaption{margin-top:16px; font-size:13px; color:var(--ink-3); text-align:center}
 
 /* ═══ FEATURE — case block with visual ═══ */
 .feature{position:relative; display:grid; grid-template-columns:1fr 1.05fr; gap:clamp(30px,4.4vw,72px);
