@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-font="inter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price negotiation</title>
+<meta name="description" content="Buyers did not know the platform allowed negotiation. I built it into the order flow: conversion into chat with the seller grew from 5% to 15%+, with 7,000 sales through negotiation in the first month.">
+<script>document.documentElement.classList.add('js')</script>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Price negotiation: more deals, busier chats">
+<meta property="og:description" content="Conversion into chat ×3 · 7,000 sales in a month">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Product Designer">
+<!-- Превью ссылки. Адрес абсолютный — он же меняется вместе с og:url
+     при переезде на usoltsev.design. -->
+<meta property="og:image" content="https://timofeyusoltsev.github.io/assets/og/og-bargaining-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Price negotiation: conversion into chat x3, 7,000 sales in a month">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+
+<link rel="canonical" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html">
+<meta property="og:url" content="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html">
+<link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-bargaining.html">
+<link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html">
+<link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=d3354e6b">
+<!-- Мост захвата в Figma: грузится только при открытии страницы
+     с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
+<script>
+if (location.hash.includes('figmacapture')) {
+  const s = document.createElement('script');
+  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+  s.async = true;
+  document.head.appendChild(s);
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__name" href="index.html">Timofey Usoltsev</a>
+    <div class="nav__links">
+      <a href="index.html#cases">Work</a>
+      <a href="index.html#exp">Experience</a>
+      <a href="index.html#approach">Approach</a>
+    </div>
+    <div class="nav__acts">
+      <a class="btn btn--bare" href="/case-wikkeo-bargaining.html" hreflang="ru" lang="ru">RU</a>
+      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Va3g7VDwjTGnI2e7ANqRNPqAumtL66ml/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="chero wrap rv">
+    <span class="case__co"><img class="mark mark--img" src="/assets/logo-wikkeo.png" alt="" aria-hidden="true">WIKKEO · 3M+ MAU</span>
+    <h1>Price negotiation: more deals, busier chats</h1>
+    <p class="chero__lead">The platform allowed negotiation, but buyers did not know it. I built it into the order flow as an explicit action,<br>not a guess.</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="facts rv">
+      <div><dt>Role</dt><dd>Lead Designer</dd></div>
+      <div><dt>Timeline</dt><dd>2025 — 2026</dd></div>
+      <div><dt>Platforms</dt><dd>Web, Mobile</dd></div>
+      <div><dt>Results</dt><dd>7,000 sales in a month</dd></div>
+    </dl>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-hero-1.webp" width="228" height="470"
+                   alt="The buyer order at the new price after negotiation">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-hero-2.webp" width="228" height="470"
+                   alt="Order discount controls in the seller dashboard">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Left — the buyer’s order at the new price, right — discount controls on the seller side</figcaption>
+    </figure>
+  </div>
+
+  <section class="sec wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Research</span>
+      <h2>The demand was there,<br>nobody knew about it</h2>
+      <p class="t2">I surveyed buyers and sellers across the platform’s community groups. 18 of 24 buyers said it had never occurred to them that you could negotiate here, but they were willing to try. To test behavior rather than a stated intent, I asked them to message a few sellers and ask for a discount:<br>7 of the 10 who tried reached a deal, and they liked the experience.</p>
+      <p class="t2">Sellers met the idea warily. That changed once it was clear the discount is theirs to set, and the mechanic works for sales volume rather than against margin.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Competitive analysis</span>
+      <h2>Everywhere negotiation lives in the chat — and gets lost there</h2>
+      <p class="t2">On Avito there is direct contact with the seller, and the most persistent buyers do agree on a discount, but there is no mechanic as such: negotiation exists only inside the chat and depends on whether the buyer thought to write at all.</p>
+      <p class="t2">On China’s 1688 the flow is carried through: the buyer messages the seller about an item, they discuss the price, the seller agrees and sets a new amount, and the buyer gets a notification that they can buy at the new price. The result of the deal lands in the item instead of staying as words in a chat.</p>
+      <p class="t2">What both share is that the entrance to negotiation is hidden inside the chat. That set where to look for a solution: leave the deal itself in the chat, and move the entrance to where the buyer already is.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Prioritization</span>
+      <h2>Hints inside the chat would not have been enough</h2>
+      <p class="t2">The obvious solution — hint in the chat that you can negotiate — broke on arithmetic: conversion into chat was low to begin with, and the hint would only reach people who had already got there. The entrance had to sit before the chat.</p>
+    </div>
+
+    <ul class="calls rv">
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>An explicit entrance in the listing and the order</b>
+        <span>A badge and a button onboard both sides right inside the purchase flow. Cheap and fits an MVP.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Hints inside the chat</b>
+        <span>Conversion into chat is too small — the mechanic would go unnoticed.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>A discount slider on the listing</b>
+        <span>It overloads the listing. The idea of showing the average sale price is worth returning to later.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Personalized notifications that the seller will cut the price</b>
+        <span>This belongs to motivation and upsell, not to negotiation itself. It was taken into work as a separate task.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>A seller rating based on negotiation success</b>
+        <span>The mechanic is not obvious to the buyer and sits closer to seller trust.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Solution</span>
+      <h2>Negotiation lives in the order, not in the chat</h2>
+    </div>
+
+    <div class="steps stg">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>The seller turns negotiation on</h3>
+        <p>In the dashboard the seller marks their items as open to offers. Taking part is voluntary — that removed the main objection raised during research.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>The buyer places an order and asks for a discount</h3>
+        <p>The order is created, the price is discussed in the chat, but the result of the deal lands in the order itself: the buyer sees the new price and pays it.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>The discount is spread across items</h3>
+        <p>The seller sets one discount for the whole order, and the system spreads it proportionally across the line items. That solved partial refunds in advance.</p>
+      </div>
+    </div>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-buyer-1.webp" width="227" height="470"
+                   alt="A listing with negotiation onboarding">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-buyer-2.webp" width="228" height="470"
+                   alt="An item with the Open to offers badge">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-buyer-3.webp" width="227" height="470"
+                   alt="The buyer order at the new price after negotiation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Buyer flow: places the order, messages the seller, the seller grants a discount</figcaption>
+    </figure>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-seller-1.webp" width="223" height="470"
+                   alt="The Open to offers setting in the seller dashboard">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-seller-2.webp" width="220" height="470"
+                   alt="Order details with the negotiated discount">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-seller-3.webp" width="226" height="470"
+                   alt="The new order total">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/bar-seller-4.webp" width="216" height="470"
+                   alt="The order total after negotiation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Seller flow: enabling negotiation in the dashboard</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Results</span>
+      <h2>Negotiation became a mass behavior within the first month</h2>
+    </div>
+    <div class="stats rv" style="grid-template-columns:repeat(2,1fr)">
+      <div><b>5% → 15%+</b><span>conversion into chat with the seller</span></div>
+      <div><b>7 000</b><span>sales through negotiation in the first month</span></div>
+    </div>
+    <div class="cs rv" style="margin-top:var(--head-gap)">
+      <p class="t2">The average check dipped for a while but was offset by sales volume — an expected trade-off, accepted in advance. The side effect turned out to matter more: seller chats became several times busier, and with them the number of buyers following sellers grew. The flip side is that sellers stopped keeping up with replies, and chat load became the next problem to solve.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <a class="nextcase rv" href="case-premier-offline.html">
+      <div class="nextcase__top">
+        <span class="eyebrow">Next case</span>
+        <span class="case__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </div>
+      <span class="nextcase__ttl">Offline mode on mobile<span class="nextcase__co"> — PREMIER</span></span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <footer class="foot">
+      <span>© 2026 Timofey Usoltsev</span>
+      <span>Made by hand</span>
+    </footer>
+  </div>
+
+</main>
+
+<script src="/site.js?v=440fd595" defer></script>
+</body>
+</html>

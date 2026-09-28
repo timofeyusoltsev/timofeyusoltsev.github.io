@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-font="inter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline mode on mobile</title>
+<meta name="description" content="I built the whole no-connection viewing flow in the PREMIER mobile app: online → downloaded → offline → watching. 30-day retention +8%, churn -10%, engagement +9%, DAU +6%.">
+<script>document.documentElement.classList.add('js')</script>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Offline mode on mobile">
+<meta property="og:description" content="Retention +8% · engagement +9% · churn −10% · DAU +6%">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Product Designer">
+<!-- Превью ссылки. Адрес абсолютный — он же меняется вместе с og:url
+     при переезде на usoltsev.design. -->
+<meta property="og:image" content="https://timofeyusoltsev.github.io/assets/og/og-offline-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Offline mode on mobile: retention +8%, engagement +9%, churn -10%, DAU +6%">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+
+<link rel="canonical" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html">
+<meta property="og:url" content="https://timofeyusoltsev.github.io/en/case-premier-offline.html">
+<link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-offline.html">
+<link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html">
+<link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=d3354e6b">
+<!-- Мост захвата в Figma: грузится только при открытии страницы
+     с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
+<script>
+if (location.hash.includes('figmacapture')) {
+  const s = document.createElement('script');
+  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+  s.async = true;
+  document.head.appendChild(s);
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__name" href="index.html">Timofey Usoltsev</a>
+    <div class="nav__links">
+      <a href="index.html#cases">Work</a>
+      <a href="index.html#exp">Experience</a>
+      <a href="index.html#approach">Approach</a>
+    </div>
+    <div class="nav__acts">
+      <a class="btn btn--bare" href="/case-premier-offline.html" hreflang="ru" lang="ru">RU</a>
+      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Va3g7VDwjTGnI2e7ANqRNPqAumtL66ml/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="chero wrap rv">
+    <span class="case__co"><span class="mark mark--pr" aria-hidden="true"><img src="/assets/logo-premier.png" alt=""></span>PREMIER · 20M+ MAU</span>
+    <h1>Offline mode on mobile</h1>
+    <p class="chero__lead">For a sizeable part of the audience, watching without a connection is not an edge case but a basic expectation. I built the whole flow: online → downloaded → offline → watching.</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="facts rv">
+      <div><dt>Role</dt><dd>Product Designer</dd></div>
+      <div><dt>Timeline</dt><dd>2025</dd></div>
+      <div><dt>Platforms</dt><dd>iOS, Android</dd></div>
+      <div><dt>Results</dt><dd>+8% retention</dd></div>
+    </dl>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--wide" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/off-hero-1.webp" width="640" height="450"
+                   alt="Episode list with a Download season 1 button">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/off-hero-2.webp" width="640" height="450"
+                   alt="Download quality settings and the Wi-Fi limit">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/off-hero-3.webp" width="640" height="450"
+                   alt="Download in progress: per-episode progress">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/off-hero-4.webp" width="640" height="450"
+                   alt="The downloads section with an error on one episode">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>The flow: download online → watch offline</figcaption>
+    </figure>
+  </div>
+
+  <section class="sec wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Audience</span>
+      <h2>Who needs this, and why<br>it is not a secondary feature</h2>
+      <p class="t2">The segments the feature was built for: people on the move — commuting and travelling; people with unstable internet; heavy mobile series watchers. For them offline mode is not an extra option but a basic expectation of a video service.</p>
+      <p class="t2">That changed the priority of the task: this was not about the convenience of a minority, but about whether the service works in one of its main modes of use.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Problem</span>
+      <h2>Downloading worked in silence</h2>
+      <p class="t2">Downloading an episode was possible, but the state of the process stayed opaque: whether the download was running or stalled, whether there was room on the device, what was already available offline and what was not.<br>Errors arrived with no reason given.</p>
+      <p class="t2">As a result the feature was used less than demand allowed — not because the need was missing, but because there was no trust in the result.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Alternatives</span>
+      <h2>The industry automated downloads — we first had to explain them</h2>
+      <p class="t2">Offline mechanics in video services are mature and well documented. Almost all of them build on top of a process the user already trusts — and distrust was exactly our problem.</p>
+    </div>
+
+    <ul class="calls rv">
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>The whole flow made transparent: states, storage, behavior offline</b>
+        <span>What went into build was predictability of the existing mechanism, not new capabilities on top of it.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Auto-downloading the next episodes, like Netflix Smart Downloads</b>
+        <span>Netflix deletes a watched episode and pulls the next one in advance, working on Wi-Fi only to save data. The mechanic is smart, but it requires trusting the automation. Our user did not even understand what was happening with an ordinary download: automating an opaque process would amplify the problem.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Offline as a privilege of a higher plan</b>
+        <span>Netflix does not offer Smart Downloads on the ad-supported plan — monetizing the feature exists and works. But it assumes the basic flow is already reliable. Selling access to something people do not trust is premature.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Leave download expiry in the dark</b>
+        <span>The DRM industry standard: an availability window of up to 30 days, a viewing window of 48 hours from first play, plus a cap on downloads per device. Technically it is a given, but as product behavior it is the source of the worst case: downloaded it and ran out of time. So the deadlines have to be shown as a timer, not discovered after the fact.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>A downloads list with no device storage management</b>
+        <span>In Netflix downloads you can see the size of each file, used and free space, sorting, and a warning when storage runs low. A section without that data stays just a list — it does not answer “what do I delete to make this fit”.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Solution</span>
+      <h2>The whole flow,<br>not just a download button</h2>
+    </div>
+
+    <div class="steps stg">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>Transparent download states</h3>
+        <p>Queued, in progress, paused, failed — every state is shown and explained, including the reason a download is not moving.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>Managing device storage</h3>
+        <p>How much the downloads take, what can be deleted and how much that frees — before storage runs out, not after.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>Predictable behavior offline</h3>
+        <p>With no connection it is clear what can be watched right now and what needs to be online. The app stopped looking broken when there is no signal.</p>
+      </div>
+    </div>
+
+    <figure class="fig rv">
+      <img class="fig__img" src="/assets/case/off-states.webp" width="876" height="2048"
+           alt="Download card states: queued, in progress, paused, failed, out of storage">
+      <figcaption>States of a download card</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Results</span>
+      <h2>Offline viewing became a stable pattern of use</h2>
+    </div>
+    <div class="stats rv">
+      <div><b>+8%</b><span>30-day retention</span></div>
+      <div><b>−10%</b><span>churn</span></div>
+      <div><b>+9%</b><span>engagement by episodes watched</span></div>
+      <div><b>+6%</b><span>DAU of the mobile apps</span></div>
+    </div>
+    <div class="cs rv" style="margin-top:var(--head-gap)">
+      <p class="t2">The feature moved a set of connected metrics rather than one: both watch depth and how often people came back to the app went up. That confirms the original frame — offline was not a convenience but a condition of using the service for a noticeable part of the audience.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <a class="nextcase rv" href="case-wikkeo-monetization.html">
+      <div class="nextcase__top">
+        <span class="eyebrow">Next case</span>
+        <span class="case__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </div>
+      <span class="nextcase__ttl">A marketplace’s first paid product<span class="nextcase__co"> — WIKKEO</span></span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <footer class="foot">
+      <span>© 2026 Timofey Usoltsev</span>
+      <span>Made by hand</span>
+    </footer>
+  </div>
+
+</main>
+
+<script src="/site.js?v=440fd595" defer></script>
+</body>
+</html>

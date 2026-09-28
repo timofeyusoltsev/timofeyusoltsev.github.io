@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-font="inter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One subscription across three services</title>
+<meta name="description" content="I merged the PREMIER, RUTUBE and Gazprom Bonus subscriptions into one product: one profile, one payment flow. Purchase conversion +14%, average check +21%, churn -11%, LTV +21%.">
+<script>document.documentElement.classList.add('js')</script>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="One subscription across three services">
+<meta property="og:description" content="Conversion +14% · check +21% · LTV +21% · churn −11%">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Product Designer">
+<!-- Превью ссылки. Адрес абсолютный — он же меняется вместе с og:url
+     при переезде на usoltsev.design. -->
+<meta property="og:image" content="https://timofeyusoltsev.github.io/assets/og/og-subscription-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="One subscription across three services: conversion +14%, check +21%, LTV +21%, churn -11%">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+
+<link rel="canonical" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html">
+<meta property="og:url" content="https://timofeyusoltsev.github.io/en/case-premier-subscription.html">
+<link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-subscription.html">
+<link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html">
+<link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=d3354e6b">
+<!-- Мост захвата в Figma: грузится только при открытии страницы
+     с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
+<script>
+if (location.hash.includes('figmacapture')) {
+  const s = document.createElement('script');
+  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+  s.async = true;
+  document.head.appendChild(s);
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__name" href="index.html">Timofey Usoltsev</a>
+    <div class="nav__links">
+      <a href="index.html#cases">Work</a>
+      <a href="index.html#exp">Experience</a>
+      <a href="index.html#approach">Approach</a>
+    </div>
+    <div class="nav__acts">
+      <a class="btn btn--bare" href="/case-premier-subscription.html" hreflang="ru" lang="ru">RU</a>
+      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Va3g7VDwjTGnI2e7ANqRNPqAumtL66ml/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="chero wrap rv">
+    <span class="case__co"><span class="mark mark--pr" aria-hidden="true"><img src="/assets/logo-premier.png" alt=""></span>PREMIER · 20M+ MAU</span>
+    <h1>One subscription<br>across three services</h1>
+    <p class="chero__lead">I merged the PREMIER, RUTUBE and Gazprom Bonus subscriptions into one product: one profile, one payment flow,<br>with the whole value visible before paying.</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="facts rv">
+      <div><dt>Role</dt><dd>Product Designer</dd></div>
+      <div><dt>Timeline</dt><dd>2025</dd></div>
+      <div><dt>Platforms</dt><dd>Web, Mobile</dd></div>
+      <div><dt>Results</dt><dd>+14% purchase conversion</dd></div>
+    </dl>
+
+    <figure class="fig rv">
+      <img class="fig__img" src="/assets/case/sub-hero.webp" width="607" height="640"
+           alt="Success screen after subscribing to PREMIER, with a tappable partner list">
+      <figcaption>Success screen with a tappable partner list and a call to action</figcaption>
+    </figure>
+  </div>
+
+  <section class="sec wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Context</span>
+      <h2>An ecosystem on paper,<br>three products in the interface</h2>
+      <p class="t2">PREMIER gave access to its own series and films, Rutube to video hosting, Gazprom Bonus to its ecosystem. On paper this was one ecosystem bundle, but the user ran into three different products: different profiles, different payment flows, different language describing the same value.<br>The benefit had to be assembled in your own head.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Hypothesis</span>
+      <h2>What slows the decision to pay is not price, it is confusion</h2>
+      <p class="t2">The business hypothesis we entered the project with: if the user has one profile, one clear payment flow and the whole value of the subscription visible at once, they decide to pay faster, understand better what they are paying for, and feel disappointed less often after the purchase.</p>
+      <p class="t2">That gave a set of testable metrics: purchase conversion stood for the speed of the decision, average check for understanding of value, churn for the absence of disappointment after paying.</p>
+    </div>
+
+    <figure class="fig rv">
+      <img class="fig__img" src="/assets/case/sub-flow.webp" width="910" height="299"
+           alt="The start of the PREMIER unified subscription flow">
+      <figcaption>The start of the product flow</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Alternatives</span>
+      <h2>The market knew how to retain with price — the job was to learn how to explain</h2>
+      <p class="t2">Ready-made models for bundling subscriptions existed on the market, and almost all of them were cheaper to build. But the hypothesis said the decision to pay is slowed by confusion, not price — and that ruled most of them out.</p>
+    </div>
+
+    <ul class="calls rv">
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>One profile and one payment flow</b>
+        <span>The only option that removes the cause instead of announcing it. The market later arrived at the same model: Disney announced folding Hulu fully into Disney+ on one platform — for engagement and lower churn.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>A price bundle: a discount on three subscriptions, three separate entrances</b>
+        <span>That is how Disney+ / Hulu / HBO Max is put together: one bill, but three apps and three accounts. The model works — 3-month retention for the bundle is 73% against 54–56% for the same services separately. What retains here is price, not understanding, so this option cannot test our hypothesis.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>An aggregator model, like Prime Video Channels</b>
+        <span>Partner subscriptions connect inside one interface and one bill, but stay separate lines in billing, and some content sends you off into the partner’s app. For us that would have kept three payment flows — exactly the thing the project existed to remove.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Lean on a flagship brand instead of explaining the value</b>
+        <span>Ecosystem subscriptions in Russia have an anchor: 43% of people with several subscriptions name Yandex Plus as their main one. Gazprom Bonus holds 2% of the market. There was no recognition to carry the bundle, so the value had to be shown by the interface.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Keep growing the bundle instead of simplifying the entrance</b>
+        <span>Half the subscribers of ecosystem services never use the streaming services included: dormant services pile up, and one day the whole subscription gets cancelled. Adding services to a bundle nobody understands means growing future churn.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Solution</span>
+      <h2>One purchase flow instead of three parallel ones</h2>
+    </div>
+
+    <div class="steps stg">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>One profile</h3>
+        <p>Entitlements for all three services are tied to a single account. The user no longer has to work out where one product ends and another begins.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>Value before payment</h3>
+        <p>What is in the bundle and what it costs are brought into one comparison, in the same units. Comparing plans stopped being the user’s job.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>One payment flow</h3>
+        <p>Choosing a plan, the payment method and confirmation — a linear path with no jumps between services and no second sign-in.</p>
+      </div>
+    </div>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/sub-screens-1.webp" width="218" height="470"
+                   alt="Subscription storefront: what is in the bundle and the plans">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/sub-screens-2.webp" width="218" height="470"
+                   alt="Subscribing and choosing a payment method">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/sub-screens-3.webp" width="218" height="470"
+                   alt="Success screen after payment">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/sub-screens-4.webp" width="218" height="470"
+                   alt="An active subscription in the profile">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Screens of the purchase flow</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Results</span>
+      <h2>The subscription began to read as one ecosystem with a clear benefit</h2>
+    </div>
+    <div class="stats rv">
+      <div><b>+14%</b><span>purchase conversion of the unified subscription</span></div>
+      <div><b>+21%</b><span>average check</span></div>
+      <div><b>−11%</b><span>monthly churn</span></div>
+      <div><b>+21%</b><span>LTV over the first 3 months</span></div>
+    </div>
+    <div class="cs rv" style="margin-top:var(--head-gap)">
+      <p class="t2">The hypothesis held on all three metrics: the path to payment got shorter and clearer, and the fragmentation of experience between services went down. The project laid the ground for further LTV and retention growth — one profile and one payment flow became the base on which ecosystem offers can be built.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <a class="nextcase rv" href="case-wikkeo-bargaining.html">
+      <div class="nextcase__top">
+        <span class="eyebrow">Next case</span>
+        <span class="case__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </div>
+      <span class="nextcase__ttl">Price negotiation: more deals, busier chats<span class="nextcase__co"> — WIKKEO</span></span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <footer class="foot">
+      <span>© 2026 Timofey Usoltsev</span>
+      <span>Made by hand</span>
+    </footer>
+  </div>
+
+</main>
+
+<script src="/site.js?v=440fd595" defer></script>
+</body>
+</html>

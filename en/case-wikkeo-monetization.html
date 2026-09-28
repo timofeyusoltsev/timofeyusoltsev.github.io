@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-font="inter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A marketplace’s first paid product</title>
+<meta name="description" content="The WIKKEO marketplace (3M+ MAU) had no paid products at all. I designed paid promotion in the seller dashboard: an ad balance, a slot in the top sellers collection, and targeted campaigns by segment. Monetization covered 80% of the platform costs.">
+<script>document.documentElement.classList.add('js')</script>
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="A marketplace first paid product">
+<meta property="og:description" content="0 → 1 paid product · 80% of platform costs">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Product Designer">
+<!-- Превью ссылки. Адрес абсолютный — он же меняется вместе с og:url
+     при переезде на usoltsev.design. -->
+<meta property="og:image" content="https://timofeyusoltsev.github.io/assets/og/og-monetization-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A marketplace first paid product: 0 to 1 paid product, 80% of platform costs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+
+<link rel="canonical" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html">
+<meta property="og:url" content="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html">
+<link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-monetization.html">
+<link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html">
+<link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css?v=d3354e6b">
+<!-- Мост захвата в Figma: грузится только при открытии страницы
+     с хешем #figmacapture=..., поэтому посетителям сторонний скрипт не уходит. -->
+<script>
+if (location.hash.includes('figmacapture')) {
+  const s = document.createElement('script');
+  s.src = 'https://mcp.figma.com/mcp/html-to-design/capture.js';
+  s.async = true;
+  document.head.appendChild(s);
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="nav__name" href="index.html">Timofey Usoltsev</a>
+    <div class="nav__links">
+      <a href="index.html#cases">Work</a>
+      <a href="index.html#exp">Experience</a>
+      <a href="index.html#approach">Approach</a>
+    </div>
+    <div class="nav__acts">
+      <a class="btn btn--bare" href="/case-wikkeo-monetization.html" hreflang="ru" lang="ru">RU</a>
+      <a class="btn btn--bare" href="https://drive.google.com/file/d/1Va3g7VDwjTGnI2e7ANqRNPqAumtL66ml/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://t.me/norse_tm" target="_blank" rel="noopener">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="chero wrap rv">
+    <span class="case__co"><img class="mark mark--img" src="/assets/logo-wikkeo.png" alt="" aria-hidden="true">WIKKEO · 3M+ MAU</span>
+    <h1>A marketplace’s first paid product</h1>
+    <p class="chero__lead">The platform had no paid products at all. It had to start earning from sellers<br>without making them feel they had suddenly been put on the meter.</p>
+  </header>
+
+  <div class="wrap">
+    <dl class="facts rv">
+      <div><dt>Role</dt><dd>Lead Designer</dd></div>
+      <div><dt>Timeline</dt><dd>2025 — 2026</dd></div>
+      <div><dt>Platforms</dt><dd>Web, Mobile</dd></div>
+      <div><dt>Results</dt><dd>80% of costs covered</dd></div>
+    </dl>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--wide" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-hero-1.webp" width="800" height="450"
+                   alt="The Promotion section with an empty balance: no campaigns yet">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-hero-2.webp" width="800" height="450"
+                   alt="A list of running campaigns with statuses and a topped-up balance">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>The Promotion section in the seller dashboard</figcaption>
+    </figure>
+  </div>
+
+  <section class="sec wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Context</span>
+      <h2>Plenty of traffic, none of it turning into revenue</h2>
+      <p class="t2">WIKKEO is a marketplace with 3M+ monthly users. The platform ran with no revenue of its own: sellers listed for free, and the service earned nothing from any action inside the product. The brief was not “design a section” but “make the platform start earning from sellers without losing them”.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Prioritization</span>
+      <h2>Out of many monetization options, two went into build</h2>
+      <p class="t2">The first paid product sets how sellers treat every one after it. So I picked not by potential revenue but by three conditions at once: cheap to build, measurable effect, and value a seller can see.</p>
+    </div>
+
+    <ul class="calls rv">
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>A slot in the top sellers collection</b>
+        <span>Cheap, fast, and the effect is transparent to the seller and the platform alike.</span></li>
+      <li><span class="mk mk--yes" aria-hidden="true">✓</span>
+        <b>Paid notifications to buyers in chat</b>
+        <span>Chat with a similar mechanic already worked — only monetization had to be added. Minimal engineering, with direct contact to a buyer who is already interested.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Item promotion priced by views and purchases</b>
+        <span>Slow and expensive to build, with no clear payback horizon.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>A subscription model</b>
+        <span>At that point the platform had nothing to put inside subscription benefits — there was no access worth selling.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Custom listing cards</b>
+        <span>Unclear value and effect, expensive to build, and an easy way to clutter the interface with decoration.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Extended customization of item descriptions</b>
+        <span>No clear effect.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Extra tools for describing an item</b>
+        <span>The mechanic is not obvious to the seller and belongs to seller trust rather than to promotion.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Push notifications</b>
+        <span>Deferred until the mobile app ships.</span></li>
+      <li><span class="mk" aria-hidden="true">—</span>
+        <b>Sales boost</b>
+        <span>Complex and expensive, and the real effect of a boost is hard to measure correctly. Deliberately deferred.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Solution</span>
+      <h2>The seller sees what they are buying — before paying</h2>
+      <p class="t2">The key requirement: the seller has to understand exactly what they get before the money leaves, not after. Both tools live in one Promotion section and are paid from a shared ad balance.</p>
+    </div>
+
+    <div class="steps stg">
+      <div class="step">
+        <span class="step__n">01</span>
+        <h3>Ad balance</h3>
+        <p>The seller tops up an internal account through moderation and then spends it on any promotion tool. Payment is separated from use — the payment barrier is crossed once, not before every action.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">02</span>
+        <h3>A slot in the top sellers collection</h3>
+        <p>The seller buys a slot in the collection and gets extra traffic to their items. The first paid tool was chosen for exactly that: the effect is clear to both sides without explanation.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">03</span>
+        <h3>Targeted campaigns by segment</h3>
+        <p>A campaign goes not to everyone but to people who already showed interest: viewed the item, ordered it, saved it or added it to the cart. The seller picks a ready-made offer and sees reach and final cost before confirming.</p>
+      </div>
+    </div>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-flow-1.webp" width="210" height="470"
+                   alt="Chat campaigns: the balance is empty, no campaigns yet">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-flow-2.webp" width="216" height="470"
+                   alt="Creating a campaign: choosing an item and the audience type">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-flow-3.webp" width="217" height="470"
+                   alt="Choosing an item from the seller catalog">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-flow-4.webp" width="218" height="470"
+                   alt="Reach and cost calculated before launch">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-flow-5.webp" width="217" height="470"
+                   alt="The finished offer in the buyer chat">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Seller flow: topping up the balance, picking a segment, pricing the campaign</figcaption>
+    </figure>
+
+    <div class="cs rv">
+      <h2>The buyer gets the offer where they are already talking</h2>
+      <p class="t2">From the buyer’s side the new paid tool does not look like advertising: the offer arrives in the existing chat with the seller, in the same format they already use. That is what let monetization launch gently.</p>
+    </div>
+
+    <figure class="fig rv">
+      <div class="carousel carousel--phones" data-carousel>
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-chat-1.webp" width="210" height="470"
+                   alt="An offer from the seller in the buyer chat">
+            </div>
+            <div class="carousel__pane">
+              <img class="carousel__slide" src="/assets/case/mon-chat-2.webp" width="632" height="470"
+                   alt="The same chat from the seller dashboard side">
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>The offer arrives in the chat with the seller</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec sec--line wrap">
+    <div class="cs rv">
+      <span class="eyebrow">Results</span>
+      <h2>The platform started earning<br>without forcing sellers</h2>
+      <p class="t2">The platform got its first paid product — paid promotion in the seller dashboard, built from two tools on a shared ad balance. Monetization launched gently: the paid tools stay optional, and no mandatory listing fees appeared.</p>
+    </div>
+    <div class="stats rv" style="grid-template-columns:repeat(2,1fr)">
+      <div><b>0 → 1</b><span>the platform’s first paid product</span></div>
+      <div><b>80%</b><span>of costs covered by monetization</span></div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <a class="nextcase rv" href="case-premier-subscription.html">
+      <div class="nextcase__top">
+        <span class="eyebrow">Next case</span>
+        <span class="case__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </div>
+      <span class="nextcase__ttl">One subscription across three services<span class="nextcase__co"> — PREMIER</span></span>
+    </a>
+  </section>
+
+  <div class="wrap">
+    <footer class="foot">
+      <span>© 2026 Timofey Usoltsev</span>
+      <span>Made by hand</span>
+    </footer>
+  </div>
+
+</main>
+
+<script src="/site.js?v=440fd595" defer></script>
+</body>
+</html>

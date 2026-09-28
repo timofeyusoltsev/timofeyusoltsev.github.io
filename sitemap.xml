@@ -1,28 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://timofeyusoltsev.github.io/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/"/>
+    <lastmod>2026-09-28</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://timofeyusoltsev.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/"/>
+    <lastmod>2026-09-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://timofeyusoltsev.github.io/case-wikkeo-monetization.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-monetization.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html"/>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-monetization.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-monetization.html"/>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://timofeyusoltsev.github.io/case-premier-subscription.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-subscription.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html"/>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://timofeyusoltsev.github.io/en/case-premier-subscription.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-subscription.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-subscription.html"/>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://timofeyusoltsev.github.io/case-wikkeo-bargaining.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-bargaining.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html"/>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-wikkeo-bargaining.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-wikkeo-bargaining.html"/>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://timofeyusoltsev.github.io/case-premier-offline.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-offline.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html"/>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://timofeyusoltsev.github.io/en/case-premier-offline.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://timofeyusoltsev.github.io/case-premier-offline.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://timofeyusoltsev.github.io/en/case-premier-offline.html"/>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
