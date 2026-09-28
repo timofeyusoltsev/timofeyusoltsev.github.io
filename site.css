@@ -160,9 +160,20 @@ img{display:block}
 /* переключатель языка: глобус + код языка */
 .btn--lang{gap:7px}
 .btn--lang svg{opacity:.45}
-/* на телефоне в полосе борьба за каждый пиксель, и глобус там — украшение:
-   код языка несет ту же информацию и занимает вдвое меньше */
-@media(max-width:560px){ .btn--lang svg{display:none} }
+
+/* Имя в полосе сокращается до инициала там, где полное перестает помещаться
+   рядом с кнопками. Освободившееся место уходит под глобус — иначе на
+   телефоне имя уезжало на вторую строку. Порог снят с замера: полное имя
+   вместе с кнопками требует ~430px, инициал — ~330px. */
+.nav__name .nm-short{display:none}
+@media(max-width:460px){
+  .nav__name .nm-full{display:none}
+  .nav__name .nm-short{display:inline}
+  /* та же логика у кнопок: шаги и поля ужимаются, но ничего не пропадает */
+  .nav__in{gap:12px}
+  .nav__acts{gap:8px}
+  .nav__acts .btn{padding:0 11px}
+}
 
 /* ═══ BUTTONS ═══ */
 .btn{display:inline-flex; align-items:center; gap:6px; height:36px; padding:0 15px;
