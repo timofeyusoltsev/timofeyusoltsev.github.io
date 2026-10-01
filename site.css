@@ -148,7 +148,10 @@ img{display:block}
 .nav__links a{display:inline-flex; align-items:center; height:28px; padding:0 8px;
   border-radius:var(--r-sm); color:var(--ink-2);
   transition:color .15s var(--ease-out), background-color .15s var(--ease-out)}
-.nav__links a:hover{background:rgba(0,0,0,.08); color:var(--ink)}
+/* заливка на наведении — общий токен, тот же, что у кнопок полосы и у
+   карточек кейсов. Здесь стояло разовое rgba(0,0,0,.08) мимо токенов:
+   почти вдвое темнее, из-за чего середина полосы выбивалась из ряда */
+.nav__links a:hover{background:var(--fill-2); color:var(--ink)}
 .nav__acts{display:flex; align-items:center; gap:12px}
 /* без средней колонки сетка схлопывается и кнопки уезжают в центр —
    на узком экране возвращаемся к простому флексу */
