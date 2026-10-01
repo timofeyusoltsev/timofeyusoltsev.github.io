@@ -635,5 +635,9 @@ img{display:block}
   display:grid; place-items:center; font-size:10px; line-height:1;
   border:0; background:#E5E5E5; color:transparent}
 .calls .mk--yes{background:#0088FF; color:#fff}
+/* Галочка рисуется, а не берется символом ✓ из шрифта: в Inter она
+   геометрическая и тонкая, с острыми углами. Нарисованная дает
+   скругленные концы и вес, как у системной иконки в iOS. */
+.calls .mk svg{width:12px; height:12px}
 .calls b{font-weight:500; font-size:15.5px; letter-spacing:-0.01em}
 .calls span{font-size:14.5px; color:var(--ink-2); line-height:1.55}
