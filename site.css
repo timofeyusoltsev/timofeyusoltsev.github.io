@@ -139,6 +139,9 @@ img{display:block}
    Боковые колонки по 1fr держат ссылки ровно по центру полосы. */
 .nav__in{max-width:var(--max); margin:0 auto; padding:0 var(--shell); height:60px;
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:20px}
+/* Без justify-self имя растягивалось на всю колонку 1fr — 433px вместо 136,
+   и кликабельной становилась треть полосы с курсором-рукой над пустотой. */
+.nav__name{justify-self:start}
 .nav__links{justify-self:center}
 .nav__acts{justify-self:end}
 .nav__name{font-size:15px; font-weight:400; letter-spacing:-0.01em; color:var(--ink)}
