@@ -105,6 +105,11 @@ dl,dt,dd{margin:0}
 /* у figure браузер тоже держит свои поля — 40px по бокам. Из-за них
    визуалы в кейсах оказывались уже колонки контента. */
 figure{margin:0}
+
+/* Абзац без ручных переносов норовит оставить последнее слово одно на строке.
+   pretty перебалансирует хвост сам; браузеры без поддержки правило игнорируют.
+   Заголовки не трогаем — там переносы расставлены руками и осознанно. */
+p,.calls span,figcaption{text-wrap:pretty}
 a{color:inherit; text-decoration:none}
 ul{margin:0; padding:0; list-style:none}
 img{display:block}
@@ -232,9 +237,7 @@ img{display:block}
 .hero h1 .script{font-family:'Caveat',cursive; font-weight:400; font-size:1.5em;
   line-height:0; letter-spacing:-1px; color:#000}
 .hero__side{display:flex; flex-direction:column; gap:22px; padding-bottom:6px}
-/* абзац без ручных переносов норовит оставить последнее слово одно на строке —
-   pretty перебалансирует хвост сам. Браузеры без поддержки просто игнорируют */
-.hero__side p{text-wrap:pretty}
+
 .hero__acts{display:flex; flex-wrap:wrap; gap:8px}
 /* Главная кнопка занимает свою строку, почта и LinkedIn — следующую.
    Раньше все три стояли в ряд и переносились сами, когда переставали влезать:
